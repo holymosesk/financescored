@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5544932290026741" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Debt Payoff Calculator – FinanceScored</title>
+<meta name="description" content="See exactly when you'll be debt-free. Free debt payoff calculator with monthly payment planning.">
+<link rel="canonical" href="https://www.financescored.com/debt-payoff-calculator.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long will it take to pay off my debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your balance, interest rate, and monthly payment. Higher payments and lower interest rates significantly reduce payoff time and total interest paid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I pay off debt or invest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, if your debt's interest rate is higher than what you'd reasonably expect to earn investing, prioritize paying off the debt first. High-interest debt like credit cards usually should be paid off before investing."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+    --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+    --accent: #2563EB; --accent-light: #EFF6FF;
+    --success: #16A34A; --danger: #DC2626;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+  .nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+  .nav-logo span { color: #93C5FD; }
+  .nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+  .hero { padding: 2rem 1.25rem 1rem; text-align: center; max-width: 680px; margin: 0 auto; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .hero p { font-size: 14px; color: var(--text-secondary); }
+  .main { padding: 1.5rem 1.25rem; max-width: 680px; margin: 0 auto; }
+  .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .input-group { margin-bottom: 1rem; }
+  .input-group label { font-size: 13px; font-weight: 500; color: var(--text-secondary); display: block; margin-bottom: 5px; }
+  input[type="number"] { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-primary); background: var(--bg); outline: none; transition: border-color 0.15s; }
+  input:focus { border-color: var(--accent); }
+  .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-primary { width: 100%; padding: 14px; background: var(--text-primary); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.85; }
+  .results { display: none; }
+  .results.active { display: block; }
+  .result-hero { background: #1A1A1A; border-radius: var(--radius); padding: 2rem 1.25rem; text-align: center; margin-bottom: 1rem; }
+  .result-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .result-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; }
+  .result-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-label { color: var(--text-secondary); }
+  .breakdown-val { font-weight: 600; }
+  .ad-slot { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; min-height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; }
+  .email-card h3 { font-size: 15px; font-weight: 600; margin-bottom: .4rem; }
+  .email-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
+  .email-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .email-input { flex: 1; min-width: 180px; }
+  .email-status { font-size: 12px; margin-top: 8px; display: none; }
+  .email-status.success { color: var(--success); display: block; }
+  .email-status.error { color: var(--danger); display: block; }
+  .error-msg { background: #FEF2F2; border: 0.5px solid rgba(220,38,38,0.2); border-radius: var(--radius-sm); padding: 12px; font-size: 13px; color: var(--danger); margin-top: 10px; display: none; }
+  .seo-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+  .seo-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .seo-section h3 { font-size: 0.95rem; font-weight: 500; margin: 1rem 0 0.4rem; }
+  .seo-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.5rem; }
+  .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .faq-section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+  .faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 13px; font-weight: 500; margin-bottom: 0.35rem; }
+  .faq-a { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+  footer a { color: var(--text-muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Finance<span>Scored</span></a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+
+<div class="hero">
+  <h1>When will you be debt-free?</h1>
+  <p>Build your payoff plan in seconds.</p>
+</div>
+
+<div class="main">
+  <div class="card">
+    <div class="input-group">
+      <label>Current balance</label>
+      <input type="number" id="balance" placeholder="e.g. 8000">
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label>Interest rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 19.99" step="0.01">
+      </div>
+      <div class="input-group">
+        <label>Monthly payment</label>
+        <input type="number" id="payment" placeholder="e.g. 300">
+      </div>
+    </div>
+    <div id="errorMsg" class="error-msg"></div>
+    <button class="btn-primary" onclick="calculate()">Calculate payoff plan →</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="result-hero">
+      <div class="result-label">Debt-free in</div>
+      <div class="result-num" id="payoffTime">0 months</div>
+      <div class="result-sub" id="payoffDate"></div>
+    </div>
+    <div class="card">
+      <div class="breakdown-row"><span class="breakdown-label">Total interest paid</span><span class="breakdown-val" id="totalInterest">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Total amount paid</span><span class="breakdown-val" id="totalPaid">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Starting balance</span><span class="breakdown-val" id="balanceDisplay">$0</span></div>
+    </div>
+
+    <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+    <div class="card email-card">
+      <h3>Get this as an email report</h3>
+      <p>We'll send you your full payoff timeline plus tips for paying it off faster.</p>
+      <div class="email-row">
+        <input type="email" id="emailInput" class="email-input" placeholder="you@email.com">
+        <button class="btn-primary" id="emailBtn" onclick="sendReport()" style="width:auto; padding: 12px 20px;">Email me</button>
+      </div>
+      <div class="email-status" id="emailStatus"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+  <div class="seo-section">
+    <h2>How to pay off debt faster</h2>
+    <p>The biggest lever you control is your monthly payment. Even a modest increase can cut months or years off your payoff timeline and save significant money in interest, especially on high-interest debt like credit cards.</p>
+    <h3>Snowball vs. avalanche method</h3>
+    <p>If you have multiple debts, the "avalanche" method (paying extra toward your highest-interest debt first) saves the most money mathematically. The "snowball" method (paying off your smallest balance first) can provide faster psychological wins. Either is better than no plan at all.</p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <p class="faq-q">How long will it take to pay off my debt?</p>
+      <p class="faq-a">It depends on your balance, interest rate, and monthly payment. Higher payments and lower interest rates significantly reduce payoff time and total interest paid.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Should I pay off debt or invest?</p>
+      <p class="faq-a">Generally, if your debt's interest rate is higher than what you'd reasonably expect to earn investing, prioritize paying off the debt first. High-interest debt like credit cards usually should be paid off before investing.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What if my payment doesn't cover the interest?</p>
+      <p class="faq-a">If your monthly payment is too low to cover accruing interest, your balance will never decrease. This calculator will alert you if that's the case so you can adjust your payment.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/privacy.html">Privacy</a>
+</footer>
+
+<script>
+function calculate() {
+  const balance = parseFloat(document.getElementById('balance').value) || 0;
+  const rate = parseFloat(document.getElementById('rate').value) || 0;
+  const payment = parseFloat(document.getElementById('payment').value) || 0;
+  const errorMsg = document.getElementById('errorMsg');
+  errorMsg.style.display = 'none';
+
+  if (balance <= 0 || payment <= 0) {
+    errorMsg.textContent = 'Please enter a valid balance and monthly payment.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  const monthlyRate = (rate / 100) / 12;
+  const minPaymentForInterest = balance * monthlyRate;
+
+  if (payment <= minPaymentForInterest && monthlyRate > 0) {
+    errorMsg.textContent = 'Your monthly payment is too low to cover the interest. Increase your payment to make progress on this balance.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  let remaining = balance;
+  let months = 0;
+  let totalPaid = 0;
+  const maxMonths = 600;
+
+  while (remaining > 0 && months < maxMonths) {
+    const interestThisMonth = remaining * monthlyRate;
+    let principalThisMonth = payment - interestThisMonth;
+    if (principalThisMonth > remaining) principalThisMonth = remaining;
+    remaining -= principalThisMonth;
+    totalPaid += (principalThisMonth + interestThisMonth);
+    months++;
+  }
+
+  const totalInterest = totalPaid - balance;
+  const years = Math.floor(months / 12);
+  const remMonths = months % 12;
+  let timeText = '';
+  if (years > 0) timeText += years + ' yr ';
+  timeText += remMonths + ' mo';
+
+  document.getElementById('payoffTime').textContent = timeText;
+  document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+  document.getElementById('totalPaid').textContent = '$' + Math.round(totalPaid).toLocaleString();
+  document.getElementById('balanceDisplay').textContent = '$' + Math.round(balance).toLocaleString();
+
+  const payoffDate = new Date();
+  payoffDate.setMonth(payoffDate.getMonth() + months);
+  document.getElementById('payoffDate').textContent = 'Around ' + payoffDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+  document.getElementById('results').classList.add('active');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+  window.__lastResult = {
+    months: months,
+    totalInterest: Math.round(totalInterest),
+    totalPaid: Math.round(totalPaid),
+    balance: balance
+  };
+}
+
+async function sendReport() {
+  const input = document.getElementById('emailInput');
+  const status = document.getElementById('emailStatus');
+  const btn = document.getElementById('emailBtn');
+  const email = input.value.trim();
+
+  status.className = 'email-status';
+  status.textContent = '';
+
+  if (!email || !email.includes('@')) {
+    status.textContent = 'Please enter a valid email address.';
+    status.className = 'email-status error';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, tool: 'debt-payoff', result: window.__lastResult })
+    });
+    const result = await res.json();
+
+    if (res.ok && result.success) {
+      status.textContent = 'Sent! Check your inbox for your full report.';
+      status.className = 'email-status success';
+      input.value = '';
+    } else {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'email-status error';
+    }
+  } catch (e) {
+    status.textContent = 'Network error. Please try again.';
+    status.className = 'email-status error';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Email me';
+  }
+}
+</script>
+</body>
+</html>

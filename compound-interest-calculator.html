@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5544932290026741" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compound Interest Calculator – FinanceScored</title>
+<meta name="description" content="See how your savings or investments grow over time. Free compound interest calculator with monthly contributions.">
+<link rel="canonical" href="https://www.financescored.com/compound-interest-calculator.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does compound interest work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest is interest calculated on both your initial principal and the accumulated interest from previous periods, causing your money to grow faster over time compared to simple interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good interest rate for investing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historical stock market average returns are around 7-10% annually before inflation. High-yield savings accounts typically offer 4-5%. The right rate depends on your risk tolerance and time horizon."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+    --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+    --accent: #2563EB; --accent-light: #EFF6FF;
+    --success: #16A34A; --danger: #DC2626;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+  .nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+  .nav-logo span { color: #93C5FD; }
+  .nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+  .hero { padding: 2rem 1.25rem 1rem; text-align: center; max-width: 680px; margin: 0 auto; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .hero p { font-size: 14px; color: var(--text-secondary); }
+  .main { padding: 1.5rem 1.25rem; max-width: 680px; margin: 0 auto; }
+  .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .input-group { margin-bottom: 1rem; }
+  .input-group label { font-size: 13px; font-weight: 500; color: var(--text-secondary); display: block; margin-bottom: 5px; }
+  .input-group .hint { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  input[type="number"] { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-primary); background: var(--bg); outline: none; transition: border-color 0.15s; }
+  input:focus { border-color: var(--accent); }
+  .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-primary { width: 100%; padding: 14px; background: var(--text-primary); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.85; }
+  .results { display: none; }
+  .results.active { display: block; }
+  .result-hero { background: #1A1A1A; border-radius: var(--radius); padding: 2rem 1.25rem; text-align: center; margin-bottom: 1rem; }
+  .result-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .result-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; }
+  .result-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-label { color: var(--text-secondary); }
+  .breakdown-val { font-weight: 600; }
+  .ad-slot { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; min-height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; }
+  .email-card h3 { font-size: 15px; font-weight: 600; margin-bottom: .4rem; }
+  .email-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
+  .email-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .email-input { flex: 1; min-width: 180px; }
+  .email-status { font-size: 12px; margin-top: 8px; display: none; }
+  .email-status.success { color: var(--success); display: block; }
+  .email-status.error { color: var(--danger); display: block; }
+  .seo-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+  .seo-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .seo-section h3 { font-size: 0.95rem; font-weight: 500; margin: 1rem 0 0.4rem; }
+  .seo-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.5rem; }
+  .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .faq-section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+  .faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 13px; font-weight: 500; margin-bottom: 0.35rem; }
+  .faq-a { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+  footer a { color: var(--text-muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Finance<span>Scored</span></a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+
+<div class="hero">
+  <h1>Watch your money grow</h1>
+  <p>See the real power of compound interest over time.</p>
+</div>
+
+<div class="main">
+  <div class="card">
+    <div class="input-group">
+      <label>Starting amount</label>
+      <input type="number" id="principal" placeholder="e.g. 5000">
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label>Monthly contribution</label>
+        <input type="number" id="monthly" placeholder="e.g. 200">
+      </div>
+      <div class="input-group">
+        <label>Annual interest rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 7" step="0.01">
+      </div>
+    </div>
+    <div class="input-group">
+      <label>Number of years</label>
+      <input type="number" id="years" placeholder="e.g. 20">
+    </div>
+    <button class="btn-primary" onclick="calculate()">Calculate growth →</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="result-hero">
+      <div class="result-label">Estimated future value</div>
+      <div class="result-num" id="futureValue">$0</div>
+      <div class="result-sub" id="growthText"></div>
+    </div>
+    <div class="card">
+      <div class="breakdown-row"><span class="breakdown-label">Total contributed</span><span class="breakdown-val" id="totalContributed">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Total interest earned</span><span class="breakdown-val" id="totalInterest">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Starting amount</span><span class="breakdown-val" id="startDisplay">$0</span></div>
+    </div>
+
+    <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+    <div class="card email-card">
+      <h3>Get this as an email report</h3>
+      <p>We'll send you a copy of your growth projection plus tips for boosting your savings rate.</p>
+      <div class="email-row">
+        <input type="email" id="emailInput" class="email-input" placeholder="you@email.com">
+        <button class="btn-primary" id="emailBtn" onclick="sendReport()" style="width:auto; padding: 12px 20px;">Email me</button>
+      </div>
+      <div class="email-status" id="emailStatus"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+  <div class="seo-section">
+    <h2>How compound interest works</h2>
+    <p>Compound interest means you earn interest not just on your original deposit, but on the interest that's already accumulated. Over long periods, this creates exponential rather than linear growth — which is why starting early matters more than almost any other factor.</p>
+    <h3>Why time matters more than the amount</h3>
+    <p>Someone who invests a smaller amount starting at age 25 will often out-earn someone investing twice as much starting at age 40, simply because compounding has more years to work. This calculator shows that effect clearly using your own numbers.</p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <p class="faq-q">How does compound interest work?</p>
+      <p class="faq-a">Compound interest is interest calculated on both your initial principal and the accumulated interest from previous periods, causing your money to grow faster over time compared to simple interest.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What is a good interest rate for investing?</p>
+      <p class="faq-a">Historical stock market average returns are around 7-10% annually before inflation. High-yield savings accounts typically offer 4-5%. The right rate depends on your risk tolerance and time horizon.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Does this account for inflation?</p>
+      <p class="faq-a">No, this calculator shows nominal future value. To estimate real purchasing power, you'd typically subtract an assumed inflation rate (historically around 2-3% annually) from your return rate.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/privacy.html">Privacy</a>
+</footer>
+
+<script>
+function calculate() {
+  const principal = parseFloat(document.getElementById('principal').value) || 0;
+  const monthly = parseFloat(document.getElementById('monthly').value) || 0;
+  const rate = parseFloat(document.getElementById('rate').value) || 7;
+  const years = parseFloat(document.getElementById('years').value) || 0;
+
+  if (years <= 0) {
+    alert('Please enter the number of years.');
+    return;
+  }
+
+  const monthlyRate = (rate / 100) / 12;
+  const numMonths = years * 12;
+
+  let futureValue = principal * Math.pow(1 + monthlyRate, numMonths);
+  if (monthlyRate > 0) {
+    futureValue += monthly * ((Math.pow(1 + monthlyRate, numMonths) - 1) / monthlyRate);
+  } else {
+    futureValue += monthly * numMonths;
+  }
+
+  const totalContributed = principal + (monthly * numMonths);
+  const totalInterest = futureValue - totalContributed;
+
+  document.getElementById('futureValue').textContent = '$' + Math.round(futureValue).toLocaleString();
+  document.getElementById('totalContributed').textContent = '$' + Math.round(totalContributed).toLocaleString();
+  document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
+  document.getElementById('startDisplay').textContent = '$' + Math.round(principal).toLocaleString();
+  document.getElementById('growthText').textContent = 'Over ' + years + ' years';
+
+  document.getElementById('results').classList.add('active');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+  window.__lastResult = {
+    futureValue: Math.round(futureValue),
+    totalContributed: Math.round(totalContributed),
+    totalInterest: Math.round(totalInterest),
+    years: years
+  };
+}
+
+async function sendReport() {
+  const input = document.getElementById('emailInput');
+  const status = document.getElementById('emailStatus');
+  const btn = document.getElementById('emailBtn');
+  const email = input.value.trim();
+
+  status.className = 'email-status';
+  status.textContent = '';
+
+  if (!email || !email.includes('@')) {
+    status.textContent = 'Please enter a valid email address.';
+    status.className = 'email-status error';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, tool: 'compound-interest', result: window.__lastResult })
+    });
+    const result = await res.json();
+
+    if (res.ok && result.success) {
+      status.textContent = 'Sent! Check your inbox for your full report.';
+      status.className = 'email-status success';
+      input.value = '';
+    } else {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'email-status error';
+    }
+  } catch (e) {
+    status.textContent = 'Network error. Please try again.';
+    status.className = 'email-status error';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Email me';
+  }
+}
+</script>
+</body>
+</html>

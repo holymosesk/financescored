@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5544932290026741" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mortgage Affordability Calculator – FinanceScored</title>
+<meta name="description" content="Find out how much home you can afford. Free mortgage affordability calculator based on income, debts, and down payment.">
+<link rel="canonical" href="https://www.financescored.com/mortgage-calculator.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much house can I afford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most lenders use a debt-to-income ratio guideline of around 36-43% to determine affordability, factoring in your income, existing debts, down payment, and current interest rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is debt-to-income ratio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments, including your potential new mortgage payment. Lenders typically want this below 43%."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+    --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+    --accent: #2563EB; --accent-light: #EFF6FF;
+    --success: #16A34A; --warning: #D97706; --danger: #DC2626;
+    --radius: 12px; --radius-sm: 8px;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+  .nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+  .nav-logo span { color: #93C5FD; }
+  .nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+  .hero { padding: 2rem 1.25rem 1rem; text-align: center; max-width: 680px; margin: 0 auto; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .hero p { font-size: 14px; color: var(--text-secondary); }
+  .main { padding: 1.5rem 1.25rem; max-width: 680px; margin: 0 auto; }
+  .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .input-group { margin-bottom: 1rem; }
+  .input-group label { font-size: 13px; font-weight: 500; color: var(--text-secondary); display: block; margin-bottom: 5px; }
+  .input-group .hint { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  input[type="number"], input[type="text"] { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-primary); background: var(--bg); outline: none; transition: border-color 0.15s; }
+  input:focus { border-color: var(--accent); }
+  .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-primary { width: 100%; padding: 14px; background: var(--text-primary); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
+  .btn-primary:hover { opacity: 0.85; }
+  .results { display: none; }
+  .results.active { display: block; }
+  .result-hero { background: #1A1A1A; border-radius: var(--radius); padding: 2rem 1.25rem; text-align: center; margin-bottom: 1rem; }
+  .result-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .result-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; }
+  .result-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-label { color: var(--text-secondary); }
+  .breakdown-val { font-weight: 600; }
+  .dti-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; margin-top: 0.5rem; }
+  .dti-good { background: #EAF3DE; color: #3B6D11; }
+  .dti-ok { background: #FEF3C7; color: #92400E; }
+  .dti-tight { background: #FEF2F2; color: var(--danger); }
+  .ad-slot { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; min-height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; }
+  .email-card h3 { font-size: 15px; font-weight: 600; margin-bottom: .4rem; }
+  .email-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
+  .email-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .email-input { flex: 1; min-width: 180px; }
+  .email-status { font-size: 12px; margin-top: 8px; display: none; }
+  .email-status.success { color: var(--success); display: block; }
+  .email-status.error { color: var(--danger); display: block; }
+  .seo-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+  .seo-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .seo-section h3 { font-size: 0.95rem; font-weight: 500; margin: 1rem 0 0.4rem; }
+  .seo-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.5rem; }
+  .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+  .faq-section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+  .faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+  .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .faq-q { font-size: 13px; font-weight: 500; margin-bottom: 0.35rem; }
+  .faq-a { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+  footer a { color: var(--text-muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Finance<span>Scored</span></a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+
+<div class="hero">
+  <h1>How much home can you afford?</h1>
+  <p>Enter your numbers below for an instant estimate.</p>
+</div>
+
+<div class="main">
+  <div class="card">
+    <div class="input-group">
+      <label>Annual household income</label>
+      <input type="number" id="income" placeholder="e.g. 85000">
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label>Monthly debts</label>
+        <input type="number" id="debts" placeholder="e.g. 400">
+        <div class="hint">Car, credit cards, student loans</div>
+      </div>
+      <div class="input-group">
+        <label>Down payment</label>
+        <input type="number" id="downpayment" placeholder="e.g. 30000">
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-group">
+        <label>Interest rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 6.5" step="0.01">
+      </div>
+      <div class="input-group">
+        <label>Loan term (years)</label>
+        <input type="number" id="term" placeholder="30">
+      </div>
+    </div>
+    <button class="btn-primary" onclick="calculate()">Calculate affordability →</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="result-hero">
+      <div class="result-label">Estimated max home price</div>
+      <div class="result-num" id="maxPrice">$0</div>
+      <div class="result-sub" id="dtiText"></div>
+      <div id="dtiBadge"></div>
+    </div>
+    <div class="card">
+      <div class="breakdown-row"><span class="breakdown-label">Estimated monthly payment</span><span class="breakdown-val" id="monthlyPayment">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Loan amount</span><span class="breakdown-val" id="loanAmount">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Down payment</span><span class="breakdown-val" id="dpDisplay">$0</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Debt-to-income ratio</span><span class="breakdown-val" id="dtiRatio">0%</span></div>
+    </div>
+
+    <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+    <div class="card email-card">
+      <h3>Get this as an email report</h3>
+      <p>We'll send you a copy of your results plus tips on improving your mortgage readiness.</p>
+      <div class="email-row">
+        <input type="email" id="emailInput" class="email-input" placeholder="you@email.com">
+        <button class="btn-primary" id="emailBtn" onclick="sendReport()" style="width:auto; padding: 12px 20px;">Email me</button>
+      </div>
+      <div class="email-status" id="emailStatus"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement — activates after AdSense approval</div>
+
+  <div class="seo-section">
+    <h2>How mortgage affordability is calculated</h2>
+    <p>Lenders look at your debt-to-income ratio (DTI) — the percentage of your gross monthly income that goes toward debt, including your new mortgage payment. Most lenders want your total DTI under 43%, with the mortgage payment itself ideally under 28% of gross income.</p>
+    <p>This calculator estimates your maximum affordable home price by working backward from a healthy DTI, your down payment, and current interest rates.</p>
+    <h3>What affects how much you can afford</h3>
+    <p><strong>Income</strong> — Higher income raises how much monthly payment you can comfortably support.</p>
+    <p><strong>Existing debts</strong> — Car payments, credit cards, and student loans reduce how much room is left for a mortgage payment.</p>
+    <p><strong>Down payment</strong> — A larger down payment reduces your loan amount and monthly payment, increasing affordability.</p>
+    <p><strong>Interest rate</strong> — Even small rate changes significantly affect your monthly payment and total affordability.</p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <p class="faq-q">How much house can I afford?</p>
+      <p class="faq-a">Most lenders use a debt-to-income ratio guideline of around 36-43% to determine affordability, factoring in your income, existing debts, down payment, and current interest rates.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What is debt-to-income ratio?</p>
+      <p class="faq-a">Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments, including your potential new mortgage payment. Lenders typically want this below 43%.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Does this include taxes and insurance?</p>
+      <p class="faq-a">This calculator estimates principal and interest. Property taxes and homeowners insurance vary by location and should be added separately — typically 1-2% of home value annually for taxes, plus insurance costs.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/privacy.html">Privacy</a>
+</footer>
+
+<script>
+function calculate() {
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const debts = parseFloat(document.getElementById('debts').value) || 0;
+  const downpayment = parseFloat(document.getElementById('downpayment').value) || 0;
+  const rate = parseFloat(document.getElementById('rate').value) || 6.5;
+  const term = parseFloat(document.getElementById('term').value) || 30;
+
+  if (income <= 0) {
+    alert('Please enter your annual income.');
+    return;
+  }
+
+  const monthlyIncome = income / 12;
+  const maxTotalDebt = monthlyIncome * 0.43;
+  const maxMortgagePayment = Math.max(maxTotalDebt - debts, 0);
+
+  const monthlyRate = (rate / 100) / 12;
+  const numPayments = term * 12;
+  let maxLoan;
+  if (monthlyRate > 0) {
+    maxLoan = maxMortgagePayment * (1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate;
+  } else {
+    maxLoan = maxMortgagePayment * numPayments;
+  }
+
+  const maxHomePrice = maxLoan + downpayment;
+  const dti = ((debts + maxMortgagePayment) / monthlyIncome) * 100;
+
+  document.getElementById('maxPrice').textContent = '$' + Math.round(maxHomePrice).toLocaleString();
+  document.getElementById('monthlyPayment').textContent = '$' + Math.round(maxMortgagePayment).toLocaleString() + '/mo';
+  document.getElementById('loanAmount').textContent = '$' + Math.round(maxLoan).toLocaleString();
+  document.getElementById('dpDisplay').textContent = '$' + Math.round(downpayment).toLocaleString();
+  document.getElementById('dtiRatio').textContent = dti.toFixed(1) + '%';
+
+  const dtiBadgeEl = document.getElementById('dtiBadge');
+  const dtiTextEl = document.getElementById('dtiText');
+  if (dti < 36) {
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-good">Healthy range</span>';
+    dtiTextEl.textContent = 'Your debt-to-income ratio looks strong';
+  } else if (dti < 43) {
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-ok">Workable range</span>';
+    dtiTextEl.textContent = 'Within typical lender limits';
+  } else {
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-tight">Tight — consider adjusting</span>';
+    dtiTextEl.textContent = 'This may be a stretch for most lenders';
+  }
+
+  document.getElementById('results').classList.add('active');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+  window.__lastResult = {
+    maxHomePrice: Math.round(maxHomePrice),
+    monthlyPayment: Math.round(maxMortgagePayment),
+    loanAmount: Math.round(maxLoan),
+    downpayment: Math.round(downpayment),
+    dti: dti.toFixed(1)
+  };
+}
+
+async function sendReport() {
+  const input = document.getElementById('emailInput');
+  const status = document.getElementById('emailStatus');
+  const btn = document.getElementById('emailBtn');
+  const email = input.value.trim();
+
+  status.className = 'email-status';
+  status.textContent = '';
+
+  if (!email || !email.includes('@')) {
+    status.textContent = 'Please enter a valid email address.';
+    status.className = 'email-status error';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, tool: 'mortgage', result: window.__lastResult })
+    });
+    const result = await res.json();
+
+    if (res.ok && result.success) {
+      status.textContent = 'Sent! Check your inbox for your full report.';
+      status.className = 'email-status success';
+      input.value = '';
+    } else {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'email-status error';
+    }
+  } catch (e) {
+    status.textContent = 'Network error. Please try again.';
+    status.className = 'email-status error';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Email me';
+  }
+}
+</script>
+</body>
+</html>
