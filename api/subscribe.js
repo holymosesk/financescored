@@ -49,7 +49,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'FinanceScored <hello@financescored.com>',
+        from: 'FinanceScored <hello@resumescored.com>',
         to: email,
         subject: `Your ${toolLabel} Report is Ready`,
         html: `
