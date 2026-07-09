@@ -23,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How Much House Can You Really Afford? The Complete Home Buying Guide",
-  "description": "A salary-by-salary breakdown of home affordability using the three DTI tiers lenders actually use — conservative, typical, and FHA/VA maximum — with current mortgage rates.",
+  "description": "A salary-by-salary breakdown of home affordability using the three DTI tiers lenders actually use — conservative, typical, and the real-world maximum most automated underwriting will approve — with current mortgage rates.",
   "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
   "publisher": { "@type": "Organization", "name": "FinanceScored" },
   "datePublished": "2026-07-07",
@@ -49,7 +49,7 @@
     { "@type": "Question", "name": "What salary do I need to buy a $400,000 house?",
       "acceptedAnswer": { "@type": "Answer", "text": "It depends heavily on your other debt. At a conservative 28% front-end ratio with no other debt considered, you'd want closer to $105,000-$110,000. Using the roughly 44% back-end ratio typical in real-world conventional underwriting, it's closer to $65,000-$70,000, assuming minimal other monthly debt. That gap is the entire point of this guide." } },
     { "@type": "Question", "name": "Is the 28/36 rule still used in 2026?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The 28% front-end guideline is still a reasonable conservative benchmark, but in real-world conventional underwriting, back-end ratios closer to 44% are routine, and FHA and VA loans can approve back-end ratios up to 50% for qualified borrowers. Treat 28/36 as the cautious floor, not the ceiling most approvals actually land at." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "The 28% front-end guideline is still a reasonable conservative benchmark, but in real-world conventional underwriting, back-end ratios closer to 44% are routine. Automated underwriting systems (like Fannie Mae's Desktop Underwriter and Freddie Mac's Loan Product Advisor) typically cap approvals around 47.5% back-end for most borrowers, regardless of loan type. Treat 28/36 as the cautious floor, not the ceiling most approvals actually land at." } },
     { "@type": "Question", "name": "Does a bigger down payment help more than a lower interest rate?",
       "acceptedAnswer": { "@type": "Answer", "text": "Both reduce your monthly payment, but they work differently. A larger down payment lowers your loan amount directly and can eliminate PMI. A lower rate reduces the cost of every dollar you borrow. At current rates, a 1% rate reduction typically has a bigger monthly impact than a 5% increase in down payment." } },
     { "@type": "Question", "name": "Should I use my gross or net income to calculate affordability?",
@@ -215,9 +215,9 @@ footer a { color: var(--text-muted); text-decoration: underline; }
         <div class="desc">Housing plus other debt around 44% of gross income. This is where most real conventional approvals actually land.</div>
       </div>
       <div class="tier aggressive">
-        <div class="name">Aggressive / FHA-VA</div>
-        <div class="dti">Up to 50% back-end</div>
-        <div class="desc">FHA, VA, and strong borrower profiles can push back-end ratios to 50%. The ceiling, not a target.</div>
+        <div class="name">Maximum</div>
+        <div class="dti">~47.5% back-end</div>
+        <div class="desc">The top end of what automated underwriting (DU/LP) typically approves for a well-qualified borrower. A ceiling to know about, not a target — and it applies regardless of loan type, FHA or conventional.</div>
       </div>
     </div>
     <p>The "28/36 rule" you'll see everywhere online is real, but it's the conservative floor — not where most approvals land. If you want a single honest takeaway from this page: the Typical tier is the one that matches how most deals actually get underwritten.</p>
@@ -225,16 +225,16 @@ footer a { color: var(--text-muted); text-decoration: underline; }
 
   <div class="seo-section" id="by-salary">
     <h2>How much house you can afford, by salary</h2>
-    <p>Assumptions: 6.5% 30-year fixed rate, 20% down payment, and combined property tax + insurance estimated at about 1.35% of home price annually. Typical and Aggressive tiers assume minimal other monthly debt — a car payment or student loan will pull these numbers down. If 20% down isn't realistic for you — it isn't for most first-time buyers — see the down payment breakdown below, since it changes this math in a way that actually works in your favor.</p>
+    <p>Assumptions: 6.5% 30-year fixed rate, 20% down payment, and combined property tax + insurance estimated at about 1.35% of home price annually. Typical and Maximum tiers assume minimal other monthly debt — a car payment or student loan will pull these numbers down. If 20% down isn't realistic for you — it isn't for most first-time buyers — see the down payment breakdown below, since it changes this math in a way that actually works in your favor.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Gross Salary</th><th class="num">Conservative</th><th class="num">Typical</th><th class="num">Aggressive/FHA</th></tr></thead>
+        <thead><tr><th>Gross Salary</th><th class="num">Conservative</th><th class="num">Typical</th><th class="num">Maximum</th></tr></thead>
         <tbody>
-          <tr><td>$50,000</td><td class="num">$190,000</td><td class="num">$295,000</td><td class="num">$335,000</td></tr>
-          <tr><td>$75,000</td><td class="num">$285,000</td><td class="num">$445,000</td><td class="num">$505,000</td></tr>
-          <tr><td>$100,000</td><td class="num">$375,000</td><td class="num">$595,000</td><td class="num">$675,000</td></tr>
-          <tr><td>$150,000</td><td class="num">$565,000</td><td class="num">$890,000</td><td class="num">$1,010,000</td></tr>
-          <tr><td>$200,000</td><td class="num">$755,000</td><td class="num">$1,185,000</td><td class="num">$1,350,000</td></tr>
+          <tr><td>$50,000</td><td class="num">$190,000</td><td class="num">$295,000</td><td class="num">$320,000</td></tr>
+          <tr><td>$75,000</td><td class="num">$285,000</td><td class="num">$445,000</td><td class="num">$480,000</td></tr>
+          <tr><td>$100,000</td><td class="num">$375,000</td><td class="num">$595,000</td><td class="num">$640,000</td></tr>
+          <tr><td>$150,000</td><td class="num">$565,000</td><td class="num">$890,000</td><td class="num">$960,000</td></tr>
+          <tr><td>$200,000</td><td class="num">$755,000</td><td class="num">$1,185,000</td><td class="num">$1,280,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -265,6 +265,15 @@ footer a { color: var(--text-muted); text-decoration: underline; }
       </table>
     </div>
     <p>Notice the 5%-down and FHA options land at almost the same home price — FHA's cheaper insurance largely offsets its smaller down payment. The real decision usually isn't about price, it's about how much cash you can realistically put down today.</p>
+    <p style="font-size:12.5px; color:#9A9A9A;">One honest caveat: the "cash needed" figures above cover the down payment only. Real cash to close usually includes two more pieces — see below.</p>
+    <h4 style="font-size:0.85rem; font-weight:600; margin:1rem 0 0.4rem;">The three buckets of cash to close</h4>
+    <p>Every home purchase involves three separate pots of money, and lumping them together is where first-time buyers get surprised at the closing table:</p>
+    <ul>
+      <li><strong>Down payment</strong> — starts at 3.5% for FHA, sometimes as low as 3% on certain conventional programs. This is the bucket everyone talks about.</li>
+      <li><strong>Closing costs</strong> — lender fees, title insurance, appraisal, and similar costs, typically 2-5% of the purchase price. These can often be rolled into the loan or negotiated as a seller concession, but they're real money either way.</li>
+      <li><strong>Prepaids</strong> — upfront funding for your property tax and insurance escrow account, plus a small amount of prepaid interest. Also often rolled in, but it's part of what you're actually financing.</li>
+    </ul>
+    <p>Buckets two and three don't always require cash out of your pocket on day one — they're frequently financed into the loan or covered by seller concessions — but they still affect your loan amount, your monthly payment, and what you qualify for. Understanding all three is what separates "I got pre-approved" from "I know what I'm actually walking into."</p>
     <h4 style="font-size:0.85rem; font-weight:600; margin:1rem 0 0.4rem;">PMI vs. FHA MIP, in plain English</h4>
     <p><strong>PMI (Private Mortgage Insurance)</strong> applies to conventional loans when you put down less than 20%. It cancels automatically once you hit 20% equity, or you can request cancellation yourself. Rate depends heavily on credit score — roughly 0.5% to 1.5% of the loan annually.</p>
     <p><strong>FHA MIP (Mortgage Insurance Premium)</strong> applies to every FHA loan, regardless of down payment. It has two parts: a 1.75% upfront fee (usually rolled into the loan) plus an annual premium around 0.5-0.55%. Unlike PMI, MIP often lasts the life of the loan unless you refinance into a conventional loan later — the tradeoff for FHA's lower down payment and looser credit requirements.</p>
@@ -281,14 +290,14 @@ footer a { color: var(--text-muted); text-decoration: underline; }
       <li><strong>Getting pre-qualified instead of pre-approved.</strong> Pre-qualification is a self-reported guess. Pre-approval pulls your credit and verifies income — the number sellers trust.</li>
       <li><strong>Ignoring state-by-state tax and insurance differences.</strong> The same $400,000 home can carry a $250/month tax bill in one state and $700/month in another.</li>
       <li><strong>Financing a car right before applying for a mortgage.</strong> New debt shows up on your credit report immediately and can cut tens of thousands off your approved loan amount overnight.</li>
-      <li><strong>Maxing out to the 50% FHA ceiling because you technically qualify.</strong> Qualifying and being comfortable are different things — the Aggressive tier is a ceiling to know about, not a target to aim for.</li>
+      <li><strong>Maxing out to the Maximum tier because you technically qualify.</strong> Qualifying and being comfortable are different things — the ~47.5% ceiling is a number to know about, not a target to aim for.</li>
     </ul>
   </div>
 
   <div class="faq-section" id="faq">
     <h2>Frequently asked questions</h2>
     <div class="faq-item"><p class="faq-q">What salary do I need to buy a $400,000 house?</p><p class="faq-a">It depends heavily on your other debt. At a conservative 28% front-end ratio, you'd want closer to $105,000-$110,000. Using the roughly 44% back-end ratio typical in real-world underwriting, it's closer to $65,000-$70,000, assuming minimal other monthly debt. That gap is the entire point of this guide.</p></div>
-    <div class="faq-item"><p class="faq-q">Is the 28/36 rule still used in 2026?</p><p class="faq-a">The 28% front-end guideline is still a reasonable conservative benchmark, but in real-world conventional underwriting, back-end ratios closer to 44% are routine, and FHA/VA loans can approve up to 50% for qualified borrowers. Treat 28/36 as the cautious floor, not the ceiling most approvals actually land at.</p></div>
+    <div class="faq-item"><p class="faq-q">Is the 28/36 rule still used in 2026?</p><p class="faq-a">The 28% front-end guideline is still a reasonable conservative benchmark, but in real-world conventional underwriting, back-end ratios closer to 44% are routine, and automated underwriting (DU/LP) typically caps out around 47.5% for most borrowers, regardless of loan type. Treat 28/36 as the cautious floor, not the ceiling most approvals actually land at.</p></div>
     <div class="faq-item"><p class="faq-q">Does a bigger down payment help more than a lower interest rate?</p><p class="faq-a">Both lower your payment, but at current rates a 1% rate drop typically has a bigger monthly impact than a 5% increase in down payment.</p></div>
     <div class="faq-item"><p class="faq-q">Should I use my gross or net income to calculate affordability?</p><p class="faq-a">Lenders use gross (pre-tax) income for DTI calculations — but sanity-check the result against your actual take-home pay and cash flow.</p></div>
     <div class="faq-item"><p class="faq-q">How much does my credit score affect how much house I can afford?</p><p class="faq-a">A 620 versus a 760 score can shift your rate by half a point or more — tens of thousands of dollars in buying power on the same income.</p></div>
