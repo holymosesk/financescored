@@ -89,7 +89,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.75rem; }
 .hero h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; font-weight: 400; line-height: 1.2; margin-bottom: 0.75rem; max-width: 620px; margin-left: auto; margin-right: auto; }
 .hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto 1.25rem; line-height: 1.5; }
-.rate-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.15); color: #93C5FD; font-size: 12px; padding: 6px 14px; border-radius: 20px; }
+.rate-chip { display: inline-block; max-width: 480px; text-align: left; background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.15); color: #93C5FD; font-size: 12px; line-height: 1.5; padding: 10px 16px; border-radius: 10px; }
 h4 { font-family: 'Inter', sans-serif; }
 
 .main { padding: 1.5rem 1.25rem; max-width: 760px; margin: 0 auto; }
@@ -175,7 +175,10 @@ footer a { color: var(--text-muted); text-decoration: underline; }
   <p class="hero-eyebrow">Home Buying Guide</p>
   <h1>How much house can you really afford?</h1>
   <p class="hero-sub">A salary-by-salary breakdown using today's mortgage rates and the DTI ratios lenders actually approve — not just the textbook version.</p>
-  <span class="rate-chip">● Today's avg 30-yr rate: 6.5% — checked July 7, 2026</span>
+  <span class="rate-chip">● 30-yr rates are averaging around 6.5% as of <span id="today-date">today</span> — always confirm the exact current rate with a lender before locking.</span>
+  <script>
+    document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  </script>
 </div>
 
 <div class="main">
