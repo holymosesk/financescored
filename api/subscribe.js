@@ -19,6 +19,7 @@ export default async function handler(req, res) {
   const toolLabel = toolNames[tool] || 'Financial';
 
   let resultHtml = '';
+  let extrasHtml = '';
   let emailSubject = `Your ${toolLabel} Report is Ready`;
 
   if (tool === 'mortgage' && result) {
@@ -28,6 +29,22 @@ export default async function handler(req, res) {
         <p style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">$${(result.maxHomePrice || 0).toLocaleString()}</p>
         <p style="font-size: 13px; color: #444; margin: 0;">Monthly payment: $${(result.monthlyPayment || 0).toLocaleString()} · DTI: ${result.dti || 0}%</p>
       </div>`;
+
+    // Personalized insight based on their actual DTI, not just a repeat of the number
+    const dtiNote = (result.dti || 0) >= 44
+      ? `Your number sits near the "Typical" approval range — where most real conventional approvals actually land, not just the conservative textbook number. If you're carrying other monthly debt (a car payment, student loans), paying that down before you apply could meaningfully raise this number, sometimes by tens of thousands of dollars on the same income.`
+      : `Your number is on the conservative end, which usually means you have more room than this shows. It's worth knowing this isn't necessarily your ceiling — see the full breakdown of how debt and down payment size change your range below.`;
+
+    extrasHtml = `
+      <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0 0 16px;">${dtiNote}</p>
+        <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #1E40AF; font-weight: 600; margin: 0 0 10px;">Worth reading next</p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/home-buying.html" style="color: #2563EB; text-decoration: none;">→ How Much House Can You Really Afford? (full breakdown by DTI tier)</a></p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/mortgage-application-checklist.html" style="color: #2563EB; text-decoration: none;">→ Mortgage Application Checklist: what you'll actually need</a></p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/mortgage-broker-vs-bank-vs-lender.html" style="color: #2563EB; text-decoration: none;">→ Bank vs. Broker vs. Retail Lender: which one to use</a></p>
+        <p style="font-size: 13px; margin: 0;"><a href="https://financescored.com/first-time-home-buyer-roadmap.html" style="color: #2563EB; text-decoration: none;">→ First-Time Home Buyer Roadmap: every step, in order</a></p>
+      </div>`;
+
   } else if (tool === 'compound-interest' && result) {
     resultHtml = `
       <div style="padding: 16px; background: #F7F6F3; border-radius: 8px; margin-bottom: 16px;">
@@ -35,6 +52,15 @@ export default async function handler(req, res) {
         <p style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">$${(result.futureValue || 0).toLocaleString()}</p>
         <p style="font-size: 13px; color: #444; margin: 0;">Total interest earned: $${(result.totalInterest || 0).toLocaleString()} over ${result.years || 0} years</p>
       </div>`;
+
+    extrasHtml = `
+      <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">One thing this calculator won't show you: starting the same contribution just 5 years earlier can add tens of thousands to the ending number by the same target date — not from contributing more, purely from extra time for compounding to work. Time in the market is the single biggest lever most people underuse, and it's the one thing you can't buy back later.</p>
+      </div>`;
+    // Note: no article link included here yet — the Investing silo (Simple vs. Compound
+    // Interest, 401k/IRA/Roth) isn't built on the site yet. Add real links here once it is,
+    // rather than linking to a page that doesn't exist.
+
   } else if (tool === 'debt-payoff' && result) {
     resultHtml = `
       <div style="padding: 16px; background: #F7F6F3; border-radius: 8px; margin-bottom: 16px;">
@@ -42,6 +68,13 @@ export default async function handler(req, res) {
         <p style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">${Math.floor((result.months || 0) / 12)} yr ${(result.months || 0) % 12} mo</p>
         <p style="font-size: 13px; color: #444; margin: 0;">Total interest paid: $${(result.totalInterest || 0).toLocaleString()}</p>
       </div>`;
+
+    extrasHtml = `
+      <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">Every extra dollar you put toward this debt is a guaranteed return equal to its interest rate. Paying off a 20%+ APR card, for example, is mathematically similar to earning a risk-free 20% return — a bar almost no investment clears reliably. If you're deciding between paying extra here or investing instead, that comparison is usually the one that matters most.</p>
+      </div>`;
+    // Note: same as above — link to a dedicated Debt Payoff article once that silo is built.
+
   } else if (tool === 'tracker') {
     // No calculator result to show — this is the interactive tracker download flow.
     // The tracker itself lives as a static page on the site; the email just links to it,
@@ -81,6 +114,7 @@ export default async function handler(req, res) {
 
             <div style="background: #fff; border-radius: 12px; padding: 32px; margin-bottom: 16px;">
               ${resultHtml}
+              ${extrasHtml}
               <p style="font-size: 13px; color: #6B6B6B; line-height: 1.6; margin: 0;">
                 This ${tool === 'tracker' ? 'tool' : 'estimate'} is a helpful starting point, but always confirm specifics with a licensed financial professional before making major decisions.
               </p>
