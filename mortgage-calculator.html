@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5544932290026741" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mortgage Affordability Calculator – FinanceScored</title>
@@ -19,7 +18,7 @@
       "name": "How much house can I afford?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most lenders use a debt-to-income ratio guideline of around 36-43% to determine affordability, factoring in your income, existing debts, down payment, and current interest rates."
+        "text": "Automated underwriting systems (DU/LP) typically approve a front-end ratio (housing payment alone) up to around 38% of gross income, and a back-end ratio (housing plus all other debt) up to around 47.5%. This calculator uses both limits together, since real approvals are bound by whichever ratio is more restrictive."
       }
     },
     {
@@ -27,7 +26,7 @@
       "name": "What is debt-to-income ratio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments, including your potential new mortgage payment. Lenders typically want this below 43%."
+        "text": "Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments. Lenders check two ratios: front-end (housing payment only) and back-end (housing plus all other debt), and both need to fit within lender limits."
       }
     }
   ]
@@ -46,7 +45,7 @@
   }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
   .nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+  .nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
   .nav-logo span { color: #93C5FD; }
   .nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
   .hero { padding: 2rem 1.25rem 1rem; text-align: center; max-width: 680px; margin: 0 auto; }
@@ -76,7 +75,6 @@
   .dti-good { background: #EAF3DE; color: #3B6D11; }
   .dti-ok { background: #FEF3C7; color: #92400E; }
   .dti-tight { background: #FEF2F2; color: var(--danger); }
-  .ad-slot { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; min-height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; }
   .email-card h3 { font-size: 15px; font-weight: 600; margin-bottom: .4rem; }
   .email-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
   .email-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -101,7 +99,7 @@
 <body>
 
 <nav class="nav">
-  <a href="/" class="nav-logo">Finance<span>Scored</span></a>
+  <a href="/" class="nav-logo"><img src="/fs-mark.svg" alt="" width="26" height="26" style="border-radius:50%;">Finance<span>Scored</span></a>
   <a href="/" class="nav-cta">← All tools</a>
 </nav>
 
@@ -151,10 +149,9 @@
       <div class="breakdown-row"><span class="breakdown-label">Estimated monthly payment</span><span class="breakdown-val" id="monthlyPayment">$0</span></div>
       <div class="breakdown-row"><span class="breakdown-label">Loan amount</span><span class="breakdown-val" id="loanAmount">$0</span></div>
       <div class="breakdown-row"><span class="breakdown-label">Down payment</span><span class="breakdown-val" id="dpDisplay">$0</span></div>
-      <div class="breakdown-row"><span class="breakdown-label">Debt-to-income ratio</span><span class="breakdown-val" id="dtiRatio">0%</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Back-end DTI</span><span class="breakdown-val" id="dtiRatio">0%</span></div>
+      <div class="breakdown-row"><span class="breakdown-label">Front-end DTI</span><span class="breakdown-val" id="frontDtiRatio">0%</span></div>
     </div>
-
-    <div class="ad-slot">Advertisement — activates after AdSense approval</div>
 
     <div class="card email-card">
       <h3>Get this as an email report</h3>
@@ -167,15 +164,13 @@
     </div>
   </div>
 
-  <div class="ad-slot">Advertisement — activates after AdSense approval</div>
-
   <div class="seo-section">
     <h2>How mortgage affordability is calculated</h2>
-    <p>Lenders look at your debt-to-income ratio (DTI) — the percentage of your gross monthly income that goes toward debt, including your new mortgage payment. Most lenders want your total DTI under 43%, with the mortgage payment itself ideally under 28% of gross income.</p>
-    <p>This calculator estimates your maximum affordable home price by working backward from a healthy DTI, your down payment, and current interest rates.</p>
+    <p>Automated underwriting systems (Fannie Mae's Desktop Underwriter and Freddie Mac's Loan Product Advisor) check two ratios together, not just one: a <strong>front-end ratio</strong> — your housing payment alone, capped around 38% of gross income — and a <strong>back-end ratio</strong> — housing plus all other debt, capped around 47.5%. Your real number is set by whichever of the two is more restrictive for your situation.</p>
+    <p>This calculator estimates your maximum affordable home price the same way — working backward from both limits simultaneously, along with your down payment and current interest rate.</p>
     <h3>What affects how much you can afford</h3>
     <p><strong>Income</strong> — Higher income raises how much monthly payment you can comfortably support.</p>
-    <p><strong>Existing debts</strong> — Car payments, credit cards, and student loans reduce how much room is left for a mortgage payment.</p>
+    <p><strong>Existing debts</strong> — Car payments, credit cards, and student loans reduce how much room is left for a mortgage payment under the back-end ratio.</p>
     <p><strong>Down payment</strong> — A larger down payment reduces your loan amount and monthly payment, increasing affordability.</p>
     <p><strong>Interest rate</strong> — Even small rate changes significantly affect your monthly payment and total affordability.</p>
   </div>
@@ -184,11 +179,11 @@
     <h2>Frequently asked questions</h2>
     <div class="faq-item">
       <p class="faq-q">How much house can I afford?</p>
-      <p class="faq-a">Most lenders use a debt-to-income ratio guideline of around 36-43% to determine affordability, factoring in your income, existing debts, down payment, and current interest rates.</p>
+      <p class="faq-a">Automated underwriting systems (DU/LP) typically approve a front-end ratio up to around 38% of gross income and a back-end ratio up to around 47.5%. This calculator uses both limits together, since real approvals are bound by whichever ratio is more restrictive.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">What is debt-to-income ratio?</p>
-      <p class="faq-a">Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments, including your potential new mortgage payment. Lenders typically want this below 43%.</p>
+      <p class="faq-a">Debt-to-income ratio is the percentage of your gross monthly income that goes toward debt payments. Lenders check two ratios: front-end (housing payment only) and back-end (housing plus all other debt), and both need to fit within lender limits.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Does this include taxes and insurance?</p>
@@ -215,8 +210,14 @@ function calculate() {
   }
 
   const monthlyIncome = income / 12;
-  const maxTotalDebt = monthlyIncome * 0.43;
-  const maxMortgagePayment = Math.max(maxTotalDebt - debts, 0);
+
+  // Dual-constraint underwriting model (matches how DU/LP actually evaluate a file):
+  // front-end caps the housing payment alone; back-end caps housing + all other debt.
+  // The real max payment is whichever constraint is more restrictive.
+  const maxFrontEnd = monthlyIncome * 0.38;
+  const maxBackEndTotal = monthlyIncome * 0.475;
+  const maxFromBackEnd = Math.max(maxBackEndTotal - debts, 0);
+  const maxMortgagePayment = Math.min(maxFrontEnd, maxFromBackEnd);
 
   const monthlyRate = (rate / 100) / 12;
   const numPayments = term * 12;
@@ -228,25 +229,27 @@ function calculate() {
   }
 
   const maxHomePrice = maxLoan + downpayment;
-  const dti = ((debts + maxMortgagePayment) / monthlyIncome) * 100;
+  const backEndDti = ((debts + maxMortgagePayment) / monthlyIncome) * 100;
+  const frontEndDti = (maxMortgagePayment / monthlyIncome) * 100;
 
   document.getElementById('maxPrice').textContent = '$' + Math.round(maxHomePrice).toLocaleString();
   document.getElementById('monthlyPayment').textContent = '$' + Math.round(maxMortgagePayment).toLocaleString() + '/mo';
   document.getElementById('loanAmount').textContent = '$' + Math.round(maxLoan).toLocaleString();
   document.getElementById('dpDisplay').textContent = '$' + Math.round(downpayment).toLocaleString();
-  document.getElementById('dtiRatio').textContent = dti.toFixed(1) + '%';
+  document.getElementById('dtiRatio').textContent = backEndDti.toFixed(1) + '%';
+  document.getElementById('frontDtiRatio').textContent = frontEndDti.toFixed(1) + '%';
 
   const dtiBadgeEl = document.getElementById('dtiBadge');
   const dtiTextEl = document.getElementById('dtiText');
-  if (dti < 36) {
-    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-good">Healthy range</span>';
-    dtiTextEl.textContent = 'Your debt-to-income ratio looks strong';
-  } else if (dti < 43) {
-    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-ok">Workable range</span>';
-    dtiTextEl.textContent = 'Within typical lender limits';
+  if (backEndDti < 36) {
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-good">Comfortable range</span>';
+    dtiTextEl.textContent = 'Well within what most lenders approve';
+  } else if (backEndDti < 44) {
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-ok">Typical range</span>';
+    dtiTextEl.textContent = 'This is where most real approvals land';
   } else {
-    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-tight">Tight — consider adjusting</span>';
-    dtiTextEl.textContent = 'This may be a stretch for most lenders';
+    dtiBadgeEl.innerHTML = '<span class="dti-badge dti-tight">Near the ceiling</span>';
+    dtiTextEl.textContent = 'Close to the top of what DU/LP will typically approve';
   }
 
   document.getElementById('results').classList.add('active');
@@ -257,7 +260,8 @@ function calculate() {
     monthlyPayment: Math.round(maxMortgagePayment),
     loanAmount: Math.round(maxLoan),
     downpayment: Math.round(downpayment),
-    dti: dti.toFixed(1)
+    dti: backEndDti.toFixed(1),
+    frontDti: frontEndDti.toFixed(1)
   };
 }
 
