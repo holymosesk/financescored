@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hidden Costs of Homeownership: What Your Mortgage Payment Doesn't Include | FinanceScored</title>
+<meta name="description" content="Your mortgage payment is the floor, not the ceiling. See the 7 real costs of owning a home — maintenance, taxes, insurance, PMI, HOA, utilities — with real dollar ranges.">
+<link rel="canonical" href="https://www.financescored.com/hidden-costs-of-homeownership.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hidden Costs of Homeownership: What Your Mortgage Payment Doesn't Include">
+<meta property="og:description" content="Your mortgage payment is the floor. Here are the 7 real costs that determine what a house actually costs to own.">
+<meta property="og:url" content="https://www.financescored.com/hidden-costs-of-homeownership.html">
+<meta property="og:site_name" content="FinanceScored">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Hidden Costs of Homeownership: What Your Mortgage Payment Doesn't Include",
+  "description": "A breakdown of the seven real cost categories beyond principal and interest — maintenance, property taxes, insurance, PMI, HOA fees, utilities, and moving costs — with realistic dollar ranges.",
+  "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
+  "publisher": { "@type": "Organization", "name": "FinanceScored" },
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-07-12",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/hidden-costs-of-homeownership.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "FinanceScored", "item": "https://www.financescored.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Home Buying", "item": "https://www.financescored.com/home-buying.html" },
+    { "@type": "ListItem", "position": 3, "name": "Hidden Costs of Homeownership", "item": "https://www.financescored.com/hidden-costs-of-homeownership.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much should I budget for home maintenance each year?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A common rule of thumb is 1-2% of the home's value per year. On a $400,000 home, that's $4,000 to $8,000 annually, or roughly $333 to $667 a month, set aside for repairs and upkeep that don't show up on your mortgage statement." } },
+    { "@type": "Question", "name": "How much more should I budget beyond my mortgage payment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A reasonable rule of thumb is 25-40% on top of your principal and interest payment, once you account for property taxes, insurance, maintenance reserves, and (if applicable) PMI, HOA fees, and higher utility bills than you're used to." } },
+    { "@type": "Question", "name": "Do property taxes stay the same after I buy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Property taxes are reassessed periodically — annually in some states, every few years in others — and tend to rise with home values and local budgets. Your first-year estimate is a starting point, not a fixed number for the life of the loan." } }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+  --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+  --accent: #2563EB; --accent-light: #EFF6FF;
+  --success: #16A34A; --warning: #D97706;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+
+.nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+.nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+
+.breadcrumb-bar { background: #1A1A1A; padding: 0 1.25rem 0.75rem; }
+.breadcrumb-bar nav { font-size: 12px; color: rgba(255,255,255,0.4); max-width: 720px; margin: 0 auto; }
+.breadcrumb-bar a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+.hero { background: #1A1A1A; padding: 1rem 1.25rem 2.25rem; text-align: center; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.75rem; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: #fff; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto; line-height: 1.5; }
+
+.main { padding: 1.5rem 1.25rem; max-width: 720px; margin: 0 auto; }
+.card, .seo-section, .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+
+.byline { display: flex; align-items: center; gap: 10px; background: var(--accent-light); border: 0.5px solid rgba(37,99,235,0.2); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 1rem; font-size: 13px; color: #1E40AF; line-height: 1.5; }
+.byline a { color: #1E40AF; font-weight: 600; text-decoration: underline; }
+
+.seo-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.6rem; }
+.seo-section h3 { font-size: 0.95rem; font-weight: 600; margin: 1.1rem 0 0.4rem; }
+.seo-section p, .seo-section li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.6rem; }
+.seo-section ul { padding-left: 1.2rem; margin-bottom: 0.6rem; }
+.seo-section strong { color: var(--text-primary); }
+
+.cost-item { border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 10px; }
+.cost-item .num-badge { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11.5px; font-weight: 700; margin-right: 8px; }
+.cost-item .title { font-size: 14.5px; font-weight: 600; display: inline; }
+.cost-item .range { display: block; font-size: 12px; color: var(--accent); font-weight: 600; margin: 6px 0 6px 30px; }
+.cost-item p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0 30px; }
+
+.table-wrap { overflow-x: auto; border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin: 0.75rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 10px 10px; text-align: left; border-bottom: 0.5px solid var(--border); }
+th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); background: var(--bg); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+tr.total-row td { font-weight: 700; background: var(--accent-light); }
+
+.stat-block { background: #1A1A1A; border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-align: center; }
+.stat-block .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+.stat-range { display: flex; justify-content: center; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.stat-range .num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #fff; }
+.stat-range .sep { color: rgba(255,255,255,0.3); font-size: 1.2rem; }
+.stat-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+.tool-callout { background: #1A1A1A; border-radius: var(--radius); padding: 1.75rem 1.25rem; margin-bottom: 1rem; text-align: center; }
+.tool-callout .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #93C5FD; margin-bottom: 0.5rem; }
+.tool-callout h3 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; color: #fff; margin-bottom: 0.6rem; }
+.tool-callout p { font-size: 13.5px; color: rgba(255,255,255,0.6); margin-bottom: 1rem; line-height: 1.55; }
+.btn-primary { display: inline-block; padding: 12px 22px; background: #fff; color: #1A1A1A; border: none; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.btn-primary:hover { opacity: 0.9; }
+
+.faq-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 1rem; }
+.faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-q { font-size: 13.5px; font-weight: 600; margin-bottom: 0.35rem; }
+.faq-a { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.related-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 0.5rem; }
+.related-section > p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; }
+.related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.related-card { display: block; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; text-decoration: none; color: var(--text-primary); font-size: 13.5px; font-weight: 500; }
+.related-card:hover { border-color: var(--accent); }
+.related-card .tag { display: block; font-size: 10.5px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600; }
+@media (min-width: 560px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+footer a { color: var(--text-muted); text-decoration: underline; }
+
+.disclaimer { font-size: 12px; color: var(--text-muted); text-align: center; margin: 0.5rem 0 1rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><img src="/fs-mark.svg" alt="" width="26" height="26" style="border-radius:50%;">FinanceScored</a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+<div class="breadcrumb-bar">
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/home-buying.html">Home Buying</a> / Hidden Costs</nav>
+</div>
+
+<div class="hero">
+  <p class="hero-eyebrow">Ownership Costs</p>
+  <h1>The hidden costs of homeownership nobody puts in the brochure</h1>
+  <p class="hero-sub">Your mortgage payment is not your housing cost. It's the floor. Here are the seven categories that determine the real number.</p>
+</div>
+
+<div class="main">
+
+  <div class="byline">
+    <span>📋 This guide reflects real underwriting and homeownership cost patterns, checked against real mortgage lending experience. <a href="/about.html">More on who writes FinanceScored →</a></span>
+  </div>
+
+  <div class="seo-section">
+    <p>Every affordability calculator, including ours, starts with principal and interest. That's the right place to start — but it's not the finish line. The real monthly cost of owning a home includes at least six other categories most first-time buyers never budget for, and finding out about them after closing is a bad way to learn.</p>
+  </div>
+
+  <div class="seo-section">
+    <h2>The 7 real cost categories</h2>
+
+    <div class="cost-item">
+      <span class="num-badge">1</span><span class="title">Maintenance & Repairs</span>
+      <span class="range">1-2% of home value per year</span>
+      <p>On a $400,000 home, that's $4,000-$8,000/year, or roughly $333-$667/month, that doesn't show up on any mortgage statement. This isn't optional — roofs fail, water heaters die, HVAC systems break. Budget for it monthly so a $6,000 repair isn't a crisis.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">2</span><span class="title">Property Taxes (and They Go Up)</span>
+      <span class="range">Reassessed periodically — varies by state</span>
+      <p>Your first-year estimate is a starting point, not a ceiling. Property taxes are reassessed periodically — annually in some states, every few years in others — and tend to rise with home values and local budgets. A house that's affordable at today's tax rate can get materially more expensive in year five.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">3</span><span class="title">Homeowners Insurance</span>
+      <span class="range">Rising sharply in high-risk regions</span>
+      <p>Rates have risen sharply in many areas due to climate risk — flood, wildfire, and hurricane exposure especially. Get a real quote before you fall in love with a house. Insurance in high-risk zones can add hundreds per month, and in some areas coverage is getting harder to find at all.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">4</span><span class="title">PMI, If You Put Down Less Than 20%</span>
+      <span class="range">0.5%-1.5% of the loan annually</span>
+      <p>Covered in detail in our <a href="/how-much-down-payment.html">down payment guide</a> — this runs until you hit roughly 78-80% loan-to-value. It's not permanent, but it's a real monthly cost in the early years of the loan.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">5</span><span class="title">HOA Fees</span>
+      <span class="range">$50/month to $1,000+/month</span>
+      <p>If the home has one, HOA fees range widely depending on amenities. They also tend to increase over time and can include special assessments for large repairs — a new roof, a pool, an elevator — that hit all at once, on top of the regular monthly fee.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">6</span><span class="title">Utilities Delta vs. Renting</span>
+      <span class="range">Often $100-$300/month more</span>
+      <p>Homes are often larger than the apartment or rental you're coming from. Expect higher heating/cooling, water, and electric bills — easily $100-$300/month more, depending on square footage and climate.</p>
+    </div>
+
+    <div class="cost-item">
+      <span class="num-badge">7</span><span class="title">Moving & Setup Costs</span>
+      <span class="range">$3,000-$10,000, one-time</span>
+      <p>Real but one-time: movers or moving trucks, furniture for rooms you didn't have before, window treatments, appliances not included in the sale, initial landscaping. The total depends heavily on the gap between your old place and the new one.</p>
+    </div>
+  </div>
+
+  <div class="seo-section">
+    <h2>Putting it together</h2>
+    <p>Here's what that actually adds up to on a $400,000 home — a realistic range, not a single number, since so much of this depends on your down payment, your credit, and where you live:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Cost category</th><th class="num">Monthly range</th></tr></thead>
+        <tbody>
+          <tr><td>Mortgage P&I</td><td class="num">$1,946 – $2,270</td></tr>
+          <tr><td>Property tax</td><td class="num">$300 – $500</td></tr>
+          <tr><td>Insurance</td><td class="num">$150 – $400+</td></tr>
+          <tr><td>PMI (if &lt;20% down)</td><td class="num">$0 – $150</td></tr>
+          <tr><td>Maintenance reserve</td><td class="num">$333 – $667</td></tr>
+          <tr><td>HOA (if applicable)</td><td class="num">$0 – $300+</td></tr>
+          <tr><td>Utilities delta</td><td class="num">$100 – $300</td></tr>
+          <tr class="total-row"><td>Realistic total</td><td class="num">$2,829 – $4,587</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>That's a wide range, and the mortgage payment alone is often less than half of it. Notice this range is wider than the single tax-and-insurance estimate used in our <a href="/mortgage-calculator.html">affordability calculator</a> and salary breakdowns — those use a national-average figure to keep the math comparable across income levels, while this page is showing you the real regional and situational spread. Both are correct; they're answering different questions.</p>
+  </div>
+
+  <div class="tool-callout">
+    <p class="eyebrow">Free Tool</p>
+    <h3>Start with your real number</h3>
+    <p>Get your principal-and-interest baseline first, then layer these costs on top using the ranges above.</p>
+    <a class="btn-primary" href="/mortgage-calculator.html">Open the Affordability Calculator →</a>
+  </div>
+
+  <div class="seo-section">
+    <h2>Bottom line</h2>
+    <p>Before you commit to a monthly mortgage number, add roughly <strong>25-40% on top</strong> for the real cost of owning. If that total doesn't comfortably fit your budget, the house is more expensive than it looks — regardless of what the mortgage calculator alone says. This is exactly why we build the Conservative tier into every affordability number on this site: it's the tier that leaves room for the six categories above, not just the mortgage payment.</p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><p class="faq-q">How much should I budget for home maintenance each year?</p><p class="faq-a">A common rule of thumb is 1-2% of the home's value per year. On a $400,000 home, that's $4,000 to $8,000 annually, or roughly $333 to $667 a month, set aside for repairs and upkeep that don't show up on your mortgage statement.</p></div>
+    <div class="faq-item"><p class="faq-q">How much more should I budget beyond my mortgage payment?</p><p class="faq-a">A reasonable rule of thumb is 25-40% on top of your principal and interest payment, once you account for property taxes, insurance, maintenance reserves, and — if applicable — PMI, HOA fees, and higher utility bills than you're used to.</p></div>
+    <div class="faq-item"><p class="faq-q">Do property taxes stay the same after I buy?</p><p class="faq-a">No. Property taxes are reassessed periodically — annually in some states, every few years in others — and tend to rise with home values and local budgets. Your first-year estimate is a starting point, not a fixed number for the life of the loan.</p></div>
+  </div>
+
+  <div class="card related-section">
+    <h2>Related guides</h2>
+    <p>More from the Home Buying series.</p>
+    <div class="related-grid">
+      <a class="related-card" href="/home-buying.html"><span class="tag">Pillar Guide</span>How Much House Can You Really Afford?</a>
+      <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+      <a class="related-card" href="/first-time-home-buyer-roadmap.html"><span class="tag">Start Here</span>First-Time Home Buyer Roadmap</a>
+      <a class="related-card" href="/afford-on-75k-salary.html"><span class="tag">Salary Breakdown</span>$75,000 Salary: How Much House?</a>
+      <a class="related-card" href="/mortgage-application-checklist.html"><span class="tag">Getting Ready</span>Mortgage Application Checklist</a>
+      <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This article is for educational purposes and does not constitute financial advice.</p>
+
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
