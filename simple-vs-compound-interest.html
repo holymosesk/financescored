@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simple vs. Compound Interest: Why It Cuts Both Ways | FinanceScored</title>
+<meta name="description" content="Compound interest is the same math whether it's growing your investments or growing your debt. Here's how each direction actually works, with real numbers.">
+<link rel="canonical" href="https://www.financescored.com/simple-vs-compound-interest.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simple vs. Compound Interest: Why It Cuts Both Ways">
+<meta property="og:description" content="The same mechanism builds wealth when you're early and patient, and works against you when you're carrying a balance. Here's the real math on both sides.">
+<meta property="og:url" content="https://www.financescored.com/simple-vs-compound-interest.html">
+<meta property="og:site_name" content="FinanceScored">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Simple vs. Compound Interest: Why It Cuts Both Ways",
+  "description": "A breakdown of how simple and compound interest actually work, with worked examples on both the wealth-building side and the debt side, and the practical threshold for deciding whether to pay off debt or invest.",
+  "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
+  "publisher": { "@type": "Organization", "name": "FinanceScored" },
+  "datePublished": "2026-07-13",
+  "dateModified": "2026-07-13",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/simple-vs-compound-interest.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "FinanceScored", "item": "https://www.financescored.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Investing", "item": "https://www.financescored.com/simple-vs-compound-interest.html" },
+    { "@type": "ListItem", "position": 3, "name": "Simple vs. Compound Interest", "item": "https://www.financescored.com/simple-vs-compound-interest.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is all debt compound interest?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — some loans, including a subset of auto loans and certain short-term personal loans, use simple interest. Check your loan terms directly; the compounding frequency (daily, monthly, annually) meaningfully changes total cost even at the same stated rate." } },
+    { "@type": "Question", "name": "Why does daily compounding matter more than annual for debt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The more frequently interest compounds, the faster the balance it's calculated on grows within a year. Daily compounding on a credit card produces a higher effective annual rate than the stated APR alone suggests." } },
+    { "@type": "Question", "name": "Should I pay off debt or invest first?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Generally, pay off anything above roughly 8-10% interest first — that's a guaranteed return from avoiding the interest, which is hard for most investments to reliably beat. Below that threshold it becomes more of a personal risk-tolerance and time-horizon decision." } },
+    { "@type": "Question", "name": "Does this account for taxes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, this shows nominal interest and growth. Investment gains may be taxed depending on account type — 401(k), Roth IRA, or taxable brokerage — and that isn't reflected in the raw compounding math here." } }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+  --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+  --accent: #2563EB; --accent-light: #EFF6FF;
+  --success: #16A34A; --warning: #D97706;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+
+.nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+.nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+
+.breadcrumb-bar { background: #1A1A1A; padding: 0 1.25rem 0.75rem; }
+.breadcrumb-bar nav { font-size: 12px; color: rgba(255,255,255,0.4); max-width: 720px; margin: 0 auto; }
+.breadcrumb-bar a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+.hero { background: #1A1A1A; padding: 1rem 1.25rem 2.25rem; text-align: center; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.75rem; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: #fff; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto; line-height: 1.5; }
+
+.main { padding: 1.5rem 1.25rem; max-width: 720px; margin: 0 auto; }
+.card, .seo-section, .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+
+.byline { display: flex; align-items: center; gap: 10px; background: var(--accent-light); border: 0.5px solid rgba(37,99,235,0.2); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 1rem; font-size: 13px; color: #1E40AF; line-height: 1.5; }
+.byline a { color: #1E40AF; font-weight: 600; text-decoration: underline; }
+
+.seo-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.75rem; }
+.seo-section h3 { font-size: 0.95rem; font-weight: 600; margin: 1.1rem 0 0.4rem; }
+.seo-section p, .seo-section li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.6rem; }
+.seo-section ul { padding-left: 1.2rem; margin-bottom: 0.6rem; }
+.seo-section strong { color: var(--text-primary); }
+
+.formula-box { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin: 0.75rem 0; text-align: center; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text-primary); }
+
+.compare-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 1rem 0; }
+.compare-card { border-radius: var(--radius-sm); padding: 16px; }
+.compare-card.simple { background: var(--bg); border: 0.5px solid var(--border); }
+.compare-card.compound { background: var(--accent-light); border: 0.5px solid rgba(37,99,235,0.25); }
+.compare-card .name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.compare-card.simple .name { color: #6B7280; }
+.compare-card.compound .name { color: var(--accent); }
+.compare-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+@media (min-width: 560px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
+
+.table-wrap { overflow-x: auto; border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin: 0.75rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 10px 10px; text-align: left; border-bottom: 0.5px solid var(--border); }
+th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); background: var(--bg); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+
+.tool-callout { background: #1A1A1A; border-radius: var(--radius); padding: 1.75rem 1.25rem; margin-bottom: 1rem; text-align: center; }
+.tool-callout .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #93C5FD; margin-bottom: 0.5rem; }
+.tool-callout h3 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; color: #fff; margin-bottom: 0.6rem; }
+.tool-callout p { font-size: 13.5px; color: rgba(255,255,255,0.6); margin-bottom: 1rem; line-height: 1.55; }
+.btn-primary { display: inline-block; padding: 12px 22px; background: #fff; color: #1A1A1A; border: none; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.btn-primary:hover { opacity: 0.9; }
+
+.win-box { background: #ECFDF5; border: 1px solid rgba(22,163,74,0.25); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+.win-box h2 { color: #15803D; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.2rem; margin-bottom: 0.6rem; }
+.win-box p { font-size: 13.5px; color: #166534; margin-bottom: 0.6rem; }
+
+.warn-box { background: #FEF3E2; border: 1px solid rgba(217,119,6,0.25); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+.warn-box h2 { color: #92400E; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.2rem; margin-bottom: 0.6rem; }
+.warn-box p { font-size: 13.5px; color: #78350F; margin-bottom: 0.6rem; }
+
+.faq-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 1rem; }
+.faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-q { font-size: 13.5px; font-weight: 600; margin-bottom: 0.35rem; }
+.faq-a { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.related-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 0.5rem; }
+.related-section > p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; }
+.related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.related-card { display: block; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; text-decoration: none; color: var(--text-primary); font-size: 13.5px; font-weight: 500; }
+.related-card:hover { border-color: var(--accent); }
+.related-card .tag { display: block; font-size: 10.5px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600; }
+@media (min-width: 560px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+footer a { color: var(--text-muted); text-decoration: underline; }
+
+.disclaimer { font-size: 12px; color: var(--text-muted); text-align: center; margin: 0.5rem 0 1rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><img src="/fs-mark.svg" alt="" width="26" height="26" style="border-radius:50%;">FinanceScored</a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+<div class="breadcrumb-bar">
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / Investing / Simple vs. Compound Interest</nav>
+</div>
+
+<div class="hero">
+  <p class="hero-eyebrow">Investing</p>
+  <h1>Simple vs. compound interest: why it cuts both ways</h1>
+  <p class="hero-sub">Compound interest is the same math whether it's growing your investments or growing your debt. The direction it points is what changes.</p>
+</div>
+
+<div class="main">
+
+  <div class="byline">
+    <span>📋 This guide reflects real financial planning experience, checked against the actual math — not just the textbook version. <a href="/about.html">More on who writes FinanceScored →</a></span>
+  </div>
+
+  <div class="seo-section">
+    <p>Most people learn compound interest as a wealth-building concept — start early, let it grow, retire comfortable. That's true, but it's only half the story. The exact same mechanism that builds your retirement account is also what's growing your credit card balance if you're only making minimum payments. Understanding both sides is the difference between using compounding as a tool and getting used by it.</p>
+  </div>
+
+  <div class="seo-section">
+    <h2>The two formulas</h2>
+    <div class="compare-grid">
+      <div class="compare-card simple">
+        <div class="name">Simple Interest</div>
+        <p>Calculated only on the original principal — it never grows on itself.</p>
+        <div class="formula-box" style="margin-top:10px;">I = P × r × t</div>
+      </div>
+      <div class="compare-card compound">
+        <div class="name">Compound Interest</div>
+        <p>Calculated on the principal <strong>and</strong> on interest that's already accrued. The base it's calculated on grows every period.</p>
+        <div class="formula-box" style="margin-top:10px;">A = P(1 + r/n)<sup>nt</sup></div>
+      </div>
+    </div>
+    <p>Here's what that difference looks like in practice. A $10,000 loan at 5% over 3 years:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th class="num">Total Interest</th></tr></thead>
+        <tbody>
+          <tr><td>Simple interest</td><td class="num">$1,500.00</td></tr>
+          <tr><td>Compound interest (annual)</td><td class="num">$1,576.25</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Over 3 years, the gap is $76 — barely noticeable. Over 20 or 30 years, it isn't. Simple interest is actually fairly rare in consumer lending; most mortgages, credit cards, and student loans compound in some form. It mainly shows up in certain short-term loans, some auto loans, and simple bonds.</p>
+  </div>
+
+  <div class="win-box">
+    <h2>Compounding on the wealth side</h2>
+    <p>This is the version people are told to chase, and the reason is simple: the earlier money is invested, the more compounding periods it has to work through. Time matters more than the size of your contributions.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Scenario</th><th class="num">Monthly</th><th class="num">Years</th><th class="num">Ending Value (7% avg)</th></tr></thead>
+        <tbody>
+          <tr><td>Starts at 25</td><td class="num">$300</td><td class="num">40</td><td class="num">~$785,000</td></tr>
+          <tr><td>Starts at 40</td><td class="num">$600</td><td class="num">25</td><td class="num">~$485,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The person who starts at 25 actually contributes <em>less</em> in total — $144,000 versus $180,000 — but ends up roughly $300,000 ahead, purely from having 15 extra years for compounding to work. Time is the biggest lever in this equation, and it's the one most people underuse.</p>
+  </div>
+
+  <div class="tool-callout">
+    <p class="eyebrow">Free Tool</p>
+    <h3>See what your own numbers do</h3>
+    <p>Plug in your age, contribution, and timeline to see exactly how compounding plays out for you.</p>
+    <a class="btn-primary" href="/compound-interest-calculator.html">Open the Compound Interest Calculator →</a>
+  </div>
+
+  <div class="warn-box">
+    <h2>Compounding on the debt side</h2>
+    <p>Same mechanism, opposite direction. Credit cards are the clearest example — most compound daily, and minimum payments are often structured as roughly 1% of your remaining balance plus that month's interest. That structure sounds manageable, but it barely dents the principal early on, since so much of the payment is just covering interest.</p>
+    <p>Take a $5,000 balance at 22% APR, compounded daily, making only that minimum payment: it takes roughly <strong>19 years</strong> to pay off, and the total interest paid comes out to around <strong>$7,900</strong> — more than the original balance itself.</p>
+    <p>The same force that builds wealth when you're early and patient is actively working against you when you're carrying a balance and only paying the minimum. Debt compounding rewards speed of payoff the same way investing rewards speed of starting.</p>
+  </div>
+
+  <div class="seo-section">
+    <h2>The practical takeaway: which side are you on?</h2>
+    <ul>
+      <li><strong>High-interest debt (credit cards, personal loans above roughly 8-10%):</strong> Compounding is working against you faster than almost any investment can reliably outrun. Paying this off is usually the highest guaranteed "return" available to you.</li>
+      <li><strong>Low-interest debt (some mortgages, subsidized student loans):</strong> The compounding cost is modest — it often makes more sense to pay the minimum and invest the difference instead, letting compounding work for you elsewhere.</li>
+      <li><strong>Investing:</strong> Time in the market matters more than timing the market, and more than the size of any single contribution. Starting now beats waiting to start with more.</li>
+    </ul>
+    <p>If you're carrying high-interest debt right now, our <a href="/debt-payoff-calculator.html">Debt Payoff Calculator</a> can show you exactly how much faster you clear it with extra payments — the same math driving the credit card example above.</p>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><p class="faq-q">Is all debt compound interest?</p><p class="faq-a">No — some loans, including a subset of auto loans and certain short-term personal loans, use simple interest. Check your loan terms directly; the compounding frequency (daily, monthly, annually) meaningfully changes total cost even at the same stated rate.</p></div>
+    <div class="faq-item"><p class="faq-q">Why does daily compounding matter more than annual for debt?</p><p class="faq-a">The more frequently interest compounds, the faster the balance it's calculated on grows within a year. Daily compounding on a credit card produces a higher effective annual rate than the stated APR alone suggests.</p></div>
+    <div class="faq-item"><p class="faq-q">Should I pay off debt or invest first?</p><p class="faq-a">Generally, pay off anything above roughly 8-10% interest first — that's a guaranteed return from avoiding the interest, which is hard for most investments to reliably beat. Below that threshold it becomes more of a personal risk-tolerance and time-horizon decision.</p></div>
+    <div class="faq-item"><p class="faq-q">Does this account for taxes?</p><p class="faq-a">No, this shows nominal interest and growth. Investment gains may be taxed depending on account type — 401(k), Roth IRA, or taxable brokerage — and that isn't reflected in the raw compounding math here.</p></div>
+  </div>
+
+  <div class="card related-section">
+    <h2>Related guides</h2>
+    <p>The start of our Investing series — more is coming, including a dedicated piece on paying extra toward a mortgage versus investing the difference.</p>
+    <div class="related-grid">
+      <a class="related-card" href="/compound-interest-calculator.html"><span class="tag">Tool</span>Compound Interest Calculator</a>
+      <a class="related-card" href="/debt-payoff-calculator.html"><span class="tag">Tool</span>Debt Payoff Calculator</a>
+      <a class="related-card" href="/home-buying.html"><span class="tag">Home Buying</span>How Much House Can You Really Afford?</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This article is for educational purposes and does not constitute financial advice.</p>
+
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
