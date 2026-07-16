@@ -55,25 +55,82 @@ export default async function handler(req, res) {
 
     extrasHtml = `
       <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
-        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">One thing this calculator won't show you: starting the same contribution just 5 years earlier can add tens of thousands to the ending number by the same target date — not from contributing more, purely from extra time for compounding to work. Time in the market is the single biggest lever most people underuse, and it's the one thing you can't buy back later.</p>
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0 0 16px;">One thing this calculator won't show you: starting the same contribution just 5 years earlier can add tens of thousands to the ending number by the same target date — not from contributing more, purely from extra time for compounding to work. Time in the market is the single biggest lever most people underuse, and it's the one thing you can't buy back later.</p>
+        <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #1E40AF; font-weight: 600; margin: 0 0 10px;">Worth reading next</p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/simple-vs-compound-interest.html" style="color: #2563EB; text-decoration: none;">→ Simple vs. Compound Interest: Why It Cuts Both Ways</a></p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/401k-vs-ira-vs-roth.html" style="color: #2563EB; text-decoration: none;">→ 401(k) vs. IRA vs. Roth: Which Actually Grows Your Money Fastest</a></p>
+        <p style="font-size: 13px; margin: 0 0 8px;"><a href="https://financescored.com/dollar-cost-averaging.html" style="color: #2563EB; text-decoration: none;">→ Dollar-Cost Averaging Explained</a></p>
+        <p style="font-size: 13px; margin: 0;"><a href="https://financescored.com/stocks-vs-etfs-vs-mutual-funds.html" style="color: #2563EB; text-decoration: none;">→ Stocks vs. ETFs vs. Mutual Funds: What You're Actually Buying</a></p>
       </div>`;
-    // Note: no article link included here yet — the Investing silo (Simple vs. Compound
-    // Interest, 401k/IRA/Roth) isn't built on the site yet. Add real links here once it is,
-    // rather than linking to a page that doesn't exist.
+    // Note: the Investing silo is now live (as of this update) — links above point to
+    // real published pages, not placeholders.
 
   } else if (tool === 'debt-payoff' && result) {
+    const strategyLabel = result.strategy === 'snowball' ? 'Snowball (smallest balance first)' : 'Avalanche (highest interest first)';
+
     resultHtml = `
       <div style="padding: 16px; background: #F7F6F3; border-radius: 8px; margin-bottom: 16px;">
         <p style="font-size: 13px; color: #6B6B6B; margin: 0 0 4px;">Debt-free in</p>
         <p style="font-size: 22px; font-weight: 600; margin: 0 0 12px;">${Math.floor((result.months || 0) / 12)} yr ${(result.months || 0) % 12} mo</p>
-        <p style="font-size: 13px; color: #444; margin: 0;">Total interest paid: $${(result.totalInterest || 0).toLocaleString()}</p>
+        <p style="font-size: 13px; color: #444; margin: 0;">Strategy: ${strategyLabel} · Total interest paid: $${(result.totalInterest || 0).toLocaleString()}</p>
       </div>`;
+
+    // Savings vs. minimums-only, if we have it
+    let savingsHtml = '';
+    if (result.timeSaved || result.interestSaved) {
+      const tsYears = Math.floor((result.timeSaved || 0) / 12);
+      const tsMonths = (result.timeSaved || 0) % 12;
+      savingsHtml = `
+        <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+          <tr>
+            <td style="width:50%; padding:14px; background:#ECFDF5; border-radius:8px 0 0 8px; text-align:center;">
+              <p style="font-size:18px; font-weight:700; color:#15803D; margin:0;">${tsYears > 0 ? tsYears + 'yr ' : ''}${tsMonths}mo</p>
+              <p style="font-size:11px; color:#166534; margin:2px 0 0;">Faster than minimums only</p>
+            </td>
+            <td style="width:50%; padding:14px; background:#ECFDF5; border-radius:0 8px 8px 0; text-align:center;">
+              <p style="font-size:18px; font-weight:700; color:#15803D; margin:0;">$${(result.interestSaved || 0).toLocaleString()}</p>
+              <p style="font-size:11px; color:#166534; margin:2px 0 0;">Interest saved</p>
+            </td>
+          </tr>
+        </table>`;
+    }
+
+    // Full payoff order with real projected calendar dates — this is the part that
+    // isn't shown on the page itself (the tool only shows relative month numbers),
+    // so the email genuinely adds information rather than just repeating the screen.
+    let scheduleHtml = '';
+    if (Array.isArray(result.schedule) && result.schedule.length > 0) {
+      const rows = result.schedule.map((d, i) => {
+        const projectedDate = new Date();
+        projectedDate.setMonth(projectedDate.getMonth() + (d.month || 0));
+        const dateLabel = projectedDate.toLocaleString('default', { month: 'short', year: 'numeric' });
+        return `
+        <tr>
+          <td style="padding:8px 0; border-bottom:1px solid #E5E7EB; font-size:13px; color:#1A1A1A;">${i + 1}. ${d.name}</td>
+          <td style="padding:8px 0; border-bottom:1px solid #E5E7EB; font-size:13px; color:#6B6B6B; text-align:right;">~${dateLabel}</td>
+        </tr>`;
+      }).join('');
+      scheduleHtml = `
+        <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #1E40AF; font-weight: 600; margin: 0 0 10px;">Your payoff order &amp; projected dates</p>
+        <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">${rows}</table>`;
+    }
+
+    // Strategy-aware, personalized insight — references their actual chosen strategy
+    // and actual first-target debt by name, not generic boilerplate
+    const firstTarget = (result.schedule && result.schedule[0]) ? result.schedule[0].name : 'your first debt';
+    const strategyNote = result.strategy === 'snowball'
+      ? `You picked Snowball, so every extra dollar is going toward <strong>${firstTarget}</strong> first — not necessarily your most expensive debt, but the one that'll disappear off your list soonest. That early win is the whole point: it's what keeps most people sticking with a payoff plan long enough to actually finish it.`
+      : `You picked Avalanche, so every extra dollar is going toward <strong>${firstTarget}</strong> first — your highest interest rate, which means this route is mathematically minimizing what you pay in total. Once ${firstTarget} clears, its entire minimum payment rolls onto the next debt in line automatically — that's why your later debts should disappear faster than your first one.`;
 
     extrasHtml = `
       <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
-        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">Every extra dollar you put toward this debt is a guaranteed return equal to its interest rate. Paying off a 20%+ APR card, for example, is mathematically similar to earning a risk-free 20% return — a bar almost no investment clears reliably. If you're deciding between paying extra here or investing instead, that comparison is usually the one that matters most.</p>
+        ${savingsHtml}
+        ${scheduleHtml}
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">${strategyNote} Every extra dollar you put toward debt is a guaranteed return equal to its interest rate — paying off a 20%+ APR card is mathematically similar to earning a risk-free 20% return, a bar almost no investment clears reliably.</p>
       </div>`;
-    // Note: same as above — link to a dedicated Debt Payoff article once that silo is built.
+    // Note: link to a dedicated Snowball vs. Avalanche article once it's published —
+    // that's next in the build queue for this silo. Add it here once live, rather
+    // than linking to a page that doesn't exist yet.
 
   } else if (tool === 'tracker') {
     // No calculator result to show — this is the interactive tracker download flow.
@@ -141,10 +198,13 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Email failed to send' });
     }
 
-    // ---- NEW: save the contact so future marketing is actually possible ----
+    // ---- Save the contact so future marketing is actually possible ----
     // This is intentionally non-blocking for the response — if contact creation
     // fails, the user still gets their email; we just log it for follow-up
     // rather than showing them an error over a background list-building step.
+    // NOTE: confirm in the Resend dashboard that contacts are actually landing
+    // here — this is silently swallowed on failure by design, so a broken
+    // contacts call would never surface as a user-facing error.
     try {
       await fetch('https://api.resend.com/contacts', {
         method: 'POST',
