@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Debt Payoff Calculator – FinanceScored</title>
-<meta name="description" content="See exactly when you'll be debt-free. Free debt payoff calculator with monthly payment planning.">
+<title>Debt Payoff Calculator – Snowball vs. Avalanche | FinanceScored</title>
+<meta name="description" content="Add all your debts, pick Snowball or Avalanche, and see exactly when you'll be debt-free — plus how much time and interest your strategy actually saves.">
 <link rel="canonical" href="https://www.financescored.com/debt-payoff-calculator.html">
 
 <script type="application/ld+json">
@@ -15,10 +15,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How long will it take to pay off my debt?",
+      "name": "What's the difference between debt snowball and debt avalanche?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on your balance, interest rate, and monthly payment. Higher payments and lower interest rates significantly reduce payoff time and total interest paid."
+        "text": "Avalanche pays minimums on everything and puts every extra dollar toward your highest-interest-rate debt first — mathematically optimal, saves the most money. Snowball puts every extra dollar toward your smallest balance first — usually costs a little more in interest, but clears individual debts faster, which helps a lot of people stick with the plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the extra payment move between debts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once your first target debt is fully paid off, its entire minimum payment amount gets added to your extra payment pool and rolls onto the next debt in your chosen order. This rolling effect is what makes later debts disappear much faster than the first one."
       }
     },
     {
@@ -27,6 +35,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Generally, if your debt's interest rate is higher than what you'd reasonably expect to earn investing, prioritize paying off the debt first. High-interest debt like credit cards usually should be paid off before investing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my payment doesn't cover the interest on a debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If a debt's minimum payment is too low to cover its accruing interest, that balance will never decrease on its own. This calculator will flag that debt so you know it needs a higher payment or should become your top priority."
       }
     }
   ]
@@ -40,7 +56,7 @@
     --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
     --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
     --accent: #2563EB; --accent-light: #EFF6FF;
-    --success: #16A34A; --danger: #DC2626;
+    --success: #16A34A; --danger: #DC2626; --warning: #D97706;
     --radius: 12px; --radius-sm: 8px;
   }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
@@ -53,23 +69,60 @@
   .hero p { font-size: 14px; color: var(--text-secondary); }
   .main { padding: 1.5rem 1.25rem; max-width: 680px; margin: 0 auto; }
   .card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+
+  .debt-row { border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 10px; background: var(--bg); position: relative; }
+  .debt-row-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .debt-row-header span { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; }
+  .remove-debt-btn { background: none; border: none; color: var(--danger); font-size: 12px; cursor: pointer; padding: 2px 6px; }
+  .remove-debt-btn:hover { text-decoration: underline; }
+  .debt-name-input { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; font-family: 'Inter', sans-serif; font-size: 14px; background: var(--surface); outline: none; margin-bottom: 8px; }
+  .debt-fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .field-group label { font-size: 11px; color: var(--text-secondary); display: block; margin-bottom: 4px; }
+  input[type="number"], input[type="text"] { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text-primary); background: var(--surface); outline: none; transition: border-color 0.15s; }
+  input:focus { border-color: var(--accent); }
+  .debt-row .debt-fields input { background: var(--surface); }
+
+  .add-debt-btn { width: 100%; padding: 12px; background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500; color: var(--accent); cursor: pointer; margin-bottom: 1rem; }
+  .add-debt-btn:hover { background: var(--accent-light); }
+
+  .strategy-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+  .strategy-btn { padding: 14px 10px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); cursor: pointer; text-align: left; transition: border-color 0.15s, background 0.15s; }
+  .strategy-btn .strat-name { font-size: 13.5px; font-weight: 700; margin-bottom: 3px; }
+  .strategy-btn .strat-desc { font-size: 11.5px; color: var(--text-secondary); line-height: 1.4; }
+  .strategy-btn.active { border-color: var(--accent); background: var(--accent-light); }
+  .strategy-btn.active .strat-name { color: var(--accent); }
+
   .input-group { margin-bottom: 1rem; }
   .input-group label { font-size: 13px; font-weight: 500; color: var(--text-secondary); display: block; margin-bottom: 5px; }
-  input[type="number"] { width: 100%; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-primary); background: var(--bg); outline: none; transition: border-color 0.15s; }
-  input:focus { border-color: var(--accent); }
-  .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
   .btn-primary { width: 100%; padding: 14px; background: var(--text-primary); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
   .btn-primary:hover { opacity: 0.85; }
+
   .results { display: none; }
   .results.active { display: block; }
   .result-hero { background: #1A1A1A; border-radius: var(--radius); padding: 2rem 1.25rem; text-align: center; margin-bottom: 1rem; }
   .result-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.5rem; }
   .result-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; }
   .result-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
-  .breakdown-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 0.5px solid var(--border); font-size: 14px; }
-  .breakdown-row:last-child { border-bottom: none; }
-  .breakdown-label { color: var(--text-secondary); }
-  .breakdown-val { font-weight: 600; }
+
+  .savings-banner { background: #ECFDF5; border: 1px solid rgba(22,163,74,0.25); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; text-align: center; }
+  .savings-banner .savings-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #15803D; font-weight: 700; margin-bottom: 6px; }
+  .savings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .savings-item .num { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #15803D; }
+  .savings-item .lbl { font-size: 11.5px; color: #166534; }
+
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .compare-table th, .compare-table td { padding: 10px 8px; text-align: right; border-bottom: 0.5px solid var(--border); }
+  .compare-table th:first-child, .compare-table td:first-child { text-align: left; }
+  .compare-table th { font-size: 10.5px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+  .compare-table td.highlight { font-weight: 700; color: var(--accent); }
+
+  .schedule-list { list-style: none; }
+  .schedule-list li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 0.5px solid var(--border); font-size: 13.5px; }
+  .schedule-list li:last-child { border-bottom: none; }
+  .schedule-list .order-num { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent-light); color: var(--accent); border-radius: 50%; font-size: 11px; font-weight: 700; margin-right: 8px; }
+  .schedule-list .month-badge { color: var(--text-muted); font-size: 12px; }
+
   .email-card h3 { font-size: 15px; font-weight: 600; margin-bottom: .4rem; }
   .email-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5; }
   .email-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -78,18 +131,27 @@
   .email-status.success { color: var(--success); display: block; }
   .email-status.error { color: var(--danger); display: block; }
   .error-msg { background: #FEF2F2; border: 0.5px solid rgba(220,38,38,0.2); border-radius: var(--radius-sm); padding: 12px; font-size: 13px; color: var(--danger); margin-top: 10px; display: none; }
+
   .seo-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
   .seo-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
   .seo-section h3 { font-size: 0.95rem; font-weight: 500; margin: 1rem 0 0.4rem; }
   .seo-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.5rem; }
+  .seo-section table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 0.5rem 0; }
+  .seo-section th, .seo-section td { padding: 8px; text-align: right; border-bottom: 0.5px solid var(--border); }
+  .seo-section th:first-child, .seo-section td:first-child { text-align: left; }
+  .seo-section th { color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 10.5px; background: var(--bg); }
+
   .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
   .faq-section h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
   .faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
   .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
   .faq-q { font-size: 13px; font-weight: 500; margin-bottom: 0.35rem; }
   .faq-a { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  .assumptions-note { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
   footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
   footer a { color: var(--text-muted); text-decoration: underline; }
+  @media (max-width: 420px) { .debt-fields { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -101,25 +163,33 @@
 
 <div class="hero">
   <h1>When will you be debt-free?</h1>
-  <p>Build your payoff plan in seconds.</p>
+  <p>Add every debt, pick your strategy, and see your real payoff plan.</p>
 </div>
 
 <div class="main">
   <div class="card">
+    <div id="debtRows"></div>
+    <button class="add-debt-btn" onclick="addDebtRow()">+ Add another debt</button>
+
     <div class="input-group">
-      <label>Current balance</label>
-      <input type="number" id="balance" placeholder="e.g. 8000">
+      <label>Extra monthly payment (optional)</label>
+      <input type="number" id="extraPayment" placeholder="e.g. 150">
     </div>
-    <div class="input-row">
-      <div class="input-group">
-        <label>Interest rate (%)</label>
-        <input type="number" id="rate" placeholder="e.g. 19.99" step="0.01">
-      </div>
-      <div class="input-group">
-        <label>Monthly payment</label>
-        <input type="number" id="payment" placeholder="e.g. 300">
+
+    <div class="input-group">
+      <label>Payoff strategy</label>
+      <div class="strategy-toggle">
+        <button type="button" class="strategy-btn active" id="btnAvalanche" onclick="setStrategy('avalanche')">
+          <div class="strat-name">Avalanche</div>
+          <div class="strat-desc">Highest interest rate first — saves the most money</div>
+        </button>
+        <button type="button" class="strategy-btn" id="btnSnowball" onclick="setStrategy('snowball')">
+          <div class="strat-name">Snowball</div>
+          <div class="strat-desc">Smallest balance first — clears debts faster</div>
+        </button>
       </div>
     </div>
+
     <div id="errorMsg" class="error-msg"></div>
     <button class="btn-primary" onclick="calculate()">Calculate payoff plan →</button>
   </div>
@@ -130,10 +200,35 @@
       <div class="result-num" id="payoffTime">0 months</div>
       <div class="result-sub" id="payoffDate"></div>
     </div>
+
+    <div class="savings-banner">
+      <div class="savings-label">Compared to paying only minimums</div>
+      <div class="savings-grid">
+        <div class="savings-item">
+          <div class="num" id="timeSaved">0 mo</div>
+          <div class="lbl">Faster</div>
+        </div>
+        <div class="savings-item">
+          <div class="num" id="interestSaved">$0</div>
+          <div class="lbl">Interest Saved</div>
+        </div>
+      </div>
+    </div>
+
     <div class="card">
-      <div class="breakdown-row"><span class="breakdown-label">Total interest paid</span><span class="breakdown-val" id="totalInterest">$0</span></div>
-      <div class="breakdown-row"><span class="breakdown-label">Total amount paid</span><span class="breakdown-val" id="totalPaid">$0</span></div>
-      <div class="breakdown-row"><span class="breakdown-label">Starting balance</span><span class="breakdown-val" id="balanceDisplay">$0</span></div>
+      <table class="compare-table">
+        <thead><tr><th></th><th>Minimums Only</th><th>Your Plan</th></tr></thead>
+        <tbody>
+          <tr><td>Payoff time</td><td id="baseTime">—</td><td class="highlight" id="planTime">—</td></tr>
+          <tr><td>Total interest</td><td id="baseInterest">—</td><td class="highlight" id="planInterest">—</td></tr>
+          <tr><td>Total repaid</td><td id="baseTotal">—</td><td class="highlight" id="planTotal">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:14px; font-weight:600; margin-bottom:10px;">Your payoff order</h3>
+      <ul class="schedule-list" id="scheduleList"></ul>
     </div>
 
     <div class="card email-card">
@@ -149,31 +244,50 @@
 
   <div class="seo-section">
     <h2>How to pay off debt faster</h2>
-    <p>The biggest lever you control is your monthly payment. Even a modest increase can cut months or years off your payoff timeline and save significant money in interest, especially on high-interest debt like credit cards.</p>
+    <p>The biggest lever you control is your monthly payment. Even a modest extra amount can cut months or years off your payoff timeline — and once one debt is cleared, its entire minimum payment rolls onto the next one, which is why later debts tend to disappear much faster than the first.</p>
 
     <h3>Avalanche vs. snowball, side by side</h3>
     <p><strong>Avalanche:</strong> Pay minimums on everything, throw every extra dollar at your highest-interest debt first. Mathematically optimal — saves the most money, period.</p>
-    <p><strong>Snowball:</strong> Pay minimums on everything, throw every extra dollar at your smallest balance first. Costs slightly more in interest, but you clear individual debts faster — which is often the difference between sticking with a plan and abandoning it.</p>
+    <p><strong>Snowball:</strong> Pay minimums on everything, throw every extra dollar at your smallest balance first. Usually costs a bit more in interest, but you clear individual debts faster — which is often the difference between sticking with a plan and abandoning it.</p>
 
     <h3>Which one fits you</h3>
-    <p>Choose avalanche if you're disciplined about the long game and the math matters more to you than quick wins. Choose snowball if you've tried paying down debt before and lost motivation partway through — the early wins matter more than the extra few hundred dollars in interest.</p>
+    <p>Choose avalanche if you're disciplined about the long game and the math matters more to you than quick wins. Choose snowball if you've tried paying down debt before and lost motivation partway through — the early wins matter more than the extra bit of interest.</p>
 
     <h3>A real example</h3>
-    <p>Say you owe $24,800 across three balances at different rates, paying $650/month total. Avalanche might get you debt-free in 28 months and save around $2,361 in interest compared to making only minimum payments. Snowball on the same numbers typically lands within a month or two of that timeline — the gap is usually smaller than people expect, which is exactly why "whichever one you'll actually stick with" is the right answer more often than the spreadsheet-optimal one.</p>
+    <p>Three debts totaling $24,800 — a $12,000 credit card at 24% APR, a $6,000 personal loan at 12%, and a $6,800 auto loan at 7% — with $650/month in combined minimum payments and $150/month extra:</p>
+    <table>
+      <thead><tr><th></th><th>Payoff Time</th><th>Interest Paid</th></tr></thead>
+      <tbody>
+        <tr><td>Minimums only</td><td>82 months</td><td>$14,885</td></tr>
+        <tr><td>Avalanche (+$150/mo)</td><td>42 months</td><td>$7,733</td></tr>
+        <tr><td>Snowball (+$150/mo)</td><td>43 months</td><td>$9,335</td></tr>
+      </tbody>
+    </table>
+    <p>Both strategies cut the payoff time roughly in half — from 82 months down to 42-43 — just by adding $150/month on top of the minimums. Avalanche saves about $1,600 more in interest here, since it clears the 24% credit card first instead of the smaller-but-cheaper personal loan — but the gap between the two strategies (1 month, ~$1,600) is far smaller than the gap between doing nothing extra and picking either one.</p>
   </div>
+
+  <div class="seo-section">
+    <h3 style="margin-top:0;">What this calculator assumes</h3>
+    <p class="assumptions-note">Interest compounds monthly and accrues on the remaining balance. Minimum payments and interest rates are treated as fixed for the full payoff period. When a debt is paid off, its full minimum payment is added to your extra payment and applied to the next debt in your chosen order. Real-world factors not modeled here: variable APRs, late fees, promotional rate periods, and lender-specific payment allocation rules. This tool is for educational planning, not a guarantee of your actual payoff timeline.</p>
+  </div>
+
   <div class="faq-section">
     <h2>Frequently asked questions</h2>
     <div class="faq-item">
-      <p class="faq-q">How long will it take to pay off my debt?</p>
-      <p class="faq-a">It depends on your balance, interest rate, and monthly payment. Higher payments and lower interest rates significantly reduce payoff time and total interest paid.</p>
+      <p class="faq-q">What's the difference between debt snowball and debt avalanche?</p>
+      <p class="faq-a">Avalanche pays minimums on everything and puts every extra dollar toward your highest-interest-rate debt first — mathematically optimal, saves the most money. Snowball puts every extra dollar toward your smallest balance first — usually costs a little more in interest, but clears individual debts faster, which helps a lot of people stick with the plan.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How does the extra payment move between debts?</p>
+      <p class="faq-a">Once your first target debt is fully paid off, its entire minimum payment amount gets added to your extra payment pool and rolls onto the next debt in your chosen order. This rolling effect is what makes later debts disappear much faster than the first one.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">Should I pay off debt or invest?</p>
       <p class="faq-a">Generally, if your debt's interest rate is higher than what you'd reasonably expect to earn investing, prioritize paying off the debt first. High-interest debt like credit cards usually should be paid off before investing.</p>
     </div>
     <div class="faq-item">
-      <p class="faq-q">What if my payment doesn't cover the interest?</p>
-      <p class="faq-a">If your monthly payment is too low to cover accruing interest, your balance will never decrease. This calculator will alert you if that's the case so you can adjust your payment.</p>
+      <p class="faq-q">What if my payment doesn't cover the interest on a debt?</p>
+      <p class="faq-a">If a debt's minimum payment is too low to cover its accruing interest, that balance will never decrease on its own. This calculator will flag that debt so you know it needs a higher payment or should become your top priority.</p>
     </div>
   </div>
 </div>
@@ -183,66 +297,212 @@
 </footer>
 
 <script>
+let strategy = 'avalanche';
+let debtCounter = 0;
+
+function debtRowTemplate(id, name, balance, apr, minPayment) {
+  return `
+    <div class="debt-row" id="debtRow${id}">
+      <div class="debt-row-header">
+        <span>Debt</span>
+        <button type="button" class="remove-debt-btn" onclick="removeDebtRow(${id})">Remove</button>
+      </div>
+      <input type="text" class="debt-name-input" id="name${id}" placeholder="e.g. Visa Card" value="${name || ''}">
+      <div class="debt-fields">
+        <div class="field-group">
+          <label>Balance</label>
+          <input type="number" id="balance${id}" placeholder="8000" value="${balance || ''}">
+        </div>
+        <div class="field-group">
+          <label>APR %</label>
+          <input type="number" id="apr${id}" placeholder="19.99" step="0.01" value="${apr || ''}">
+        </div>
+        <div class="field-group">
+          <label>Min payment</label>
+          <input type="number" id="minPayment${id}" placeholder="200" value="${minPayment || ''}">
+        </div>
+      </div>
+    </div>`;
+}
+
+function addDebtRow(name, balance, apr, minPayment) {
+  debtCounter++;
+  const container = document.getElementById('debtRows');
+  container.insertAdjacentHTML('beforeend', debtRowTemplate(debtCounter, name, balance, apr, minPayment));
+  updateRemoveButtons();
+}
+
+function removeDebtRow(id) {
+  const row = document.getElementById('debtRow' + id);
+  if (row) row.remove();
+  updateRemoveButtons();
+}
+
+function updateRemoveButtons() {
+  const rows = document.querySelectorAll('.debt-row');
+  rows.forEach(row => {
+    const btn = row.querySelector('.remove-debt-btn');
+    btn.style.display = rows.length > 1 ? 'inline-block' : 'none';
+  });
+}
+
+function setStrategy(s) {
+  strategy = s;
+  document.getElementById('btnAvalanche').classList.toggle('active', s === 'avalanche');
+  document.getElementById('btnSnowball').classList.toggle('active', s === 'snowball');
+}
+
+function collectDebts() {
+  const rows = document.querySelectorAll('.debt-row');
+  const debts = [];
+  rows.forEach(row => {
+    const id = row.id.replace('debtRow', '');
+    const name = document.getElementById('name' + id).value.trim() || 'Debt';
+    const balance = parseFloat(document.getElementById('balance' + id).value) || 0;
+    const apr = parseFloat(document.getElementById('apr' + id).value) || 0;
+    const minPayment = parseFloat(document.getElementById('minPayment' + id).value) || 0;
+    if (balance > 0 && minPayment > 0) {
+      debts.push({ name, balance, apr, minPayment });
+    }
+  });
+  return debts;
+}
+
+function simulateBaseline(debts, maxMonths) {
+  maxMonths = maxMonths || 600;
+  let totalMonths = 0, totalPaid = 0, totalInterest = 0;
+  debts.forEach(d => {
+    let balance = d.balance;
+    const rate = (d.apr / 100) / 12;
+    const payment = d.minPayment;
+    let m = 0, paid = 0, interestSum = 0;
+    while (balance > 0 && m < maxMonths) {
+      const interest = balance * rate;
+      let principal = payment - interest;
+      if (principal > balance) principal = balance;
+      balance -= principal;
+      paid += (principal + interest);
+      interestSum += interest;
+      m++;
+    }
+    totalMonths = Math.max(totalMonths, m);
+    totalPaid += paid;
+    totalInterest += interestSum;
+  });
+  return { months: totalMonths, totalPaid, totalInterest };
+}
+
+function simulateStrategy(debts, extra, strat, maxMonths) {
+  maxMonths = maxMonths || 600;
+  const n = debts.length;
+  let order;
+  if (strat === 'avalanche') {
+    order = debts.map((d, i) => i).sort((a, b) => debts[b].apr - debts[a].apr);
+  } else {
+    order = debts.map((d, i) => i).sort((a, b) => debts[a].balance - debts[b].balance);
+  }
+  const balances = debts.map(d => d.balance);
+  const paidOff = new Set();
+  let months = 0, totalPaid = 0, totalInterest = 0, extraPool = extra;
+  const schedule = [];
+
+  while (paidOff.size < n && months < maxMonths) {
+    months++;
+    for (let i = 0; i < n; i++) {
+      if (paidOff.has(i)) continue;
+      const interest = balances[i] * (debts[i].apr / 100 / 12);
+      totalInterest += interest;
+      balances[i] += interest;
+    }
+    const target = order.find(i => !paidOff.has(i));
+    for (let i = 0; i < n; i++) {
+      if (paidOff.has(i)) continue;
+      let pay = debts[i].minPayment;
+      if (i === target) pay += extraPool;
+      if (pay >= balances[i]) {
+        pay = balances[i];
+        paidOff.add(i);
+        schedule.push({ name: debts[i].name, month: months });
+        extraPool += debts[i].minPayment;
+      }
+      balances[i] -= pay;
+      totalPaid += pay;
+    }
+  }
+  return { months, totalPaid, totalInterest, schedule };
+}
+
+function fmtMoney(n) { return '$' + Math.round(n).toLocaleString(); }
+function fmtMonths(m) {
+  const years = Math.floor(m / 12);
+  const rem = m % 12;
+  let txt = '';
+  if (years > 0) txt += years + ' yr ';
+  txt += rem + ' mo';
+  return txt;
+}
+
 function calculate() {
-  const balance = parseFloat(document.getElementById('balance').value) || 0;
-  const rate = parseFloat(document.getElementById('rate').value) || 0;
-  const payment = parseFloat(document.getElementById('payment').value) || 0;
   const errorMsg = document.getElementById('errorMsg');
   errorMsg.style.display = 'none';
 
-  if (balance <= 0 || payment <= 0) {
-    errorMsg.textContent = 'Please enter a valid balance and monthly payment.';
+  const debts = collectDebts();
+  const extra = parseFloat(document.getElementById('extraPayment').value) || 0;
+
+  if (debts.length === 0) {
+    errorMsg.textContent = 'Please enter at least one debt with a balance and minimum payment.';
     errorMsg.style.display = 'block';
     return;
   }
 
-  const monthlyRate = (rate / 100) / 12;
-  const minPaymentForInterest = balance * monthlyRate;
-
-  if (payment <= minPaymentForInterest && monthlyRate > 0) {
-    errorMsg.textContent = 'Your monthly payment is too low to cover the interest. Increase your payment to make progress on this balance.';
+  const insufficientDebts = debts.filter(d => {
+    const monthlyRate = (d.apr / 100) / 12;
+    return monthlyRate > 0 && d.minPayment <= d.balance * monthlyRate;
+  });
+  if (insufficientDebts.length > 0) {
+    errorMsg.textContent = 'Your minimum payment on "' + insufficientDebts[0].name + '" is too low to cover its interest. Increase that payment to make progress.';
     errorMsg.style.display = 'block';
     return;
   }
 
-  let remaining = balance;
-  let months = 0;
-  let totalPaid = 0;
-  const maxMonths = 600;
+  const base = simulateBaseline(debts);
+  const plan = simulateStrategy(debts, extra, strategy);
 
-  while (remaining > 0 && months < maxMonths) {
-    const interestThisMonth = remaining * monthlyRate;
-    let principalThisMonth = payment - interestThisMonth;
-    if (principalThisMonth > remaining) principalThisMonth = remaining;
-    remaining -= principalThisMonth;
-    totalPaid += (principalThisMonth + interestThisMonth);
-    months++;
-  }
-
-  const totalInterest = totalPaid - balance;
-  const years = Math.floor(months / 12);
-  const remMonths = months % 12;
-  let timeText = '';
-  if (years > 0) timeText += years + ' yr ';
-  timeText += remMonths + ' mo';
-
-  document.getElementById('payoffTime').textContent = timeText;
-  document.getElementById('totalInterest').textContent = '$' + Math.round(totalInterest).toLocaleString();
-  document.getElementById('totalPaid').textContent = '$' + Math.round(totalPaid).toLocaleString();
-  document.getElementById('balanceDisplay').textContent = '$' + Math.round(balance).toLocaleString();
-
+  document.getElementById('payoffTime').textContent = fmtMonths(plan.months);
   const payoffDate = new Date();
-  payoffDate.setMonth(payoffDate.getMonth() + months);
+  payoffDate.setMonth(payoffDate.getMonth() + plan.months);
   document.getElementById('payoffDate').textContent = 'Around ' + payoffDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+  const timeSaved = base.months - plan.months;
+  const interestSaved = base.totalInterest - plan.totalInterest;
+  document.getElementById('timeSaved').textContent = fmtMonths(Math.max(timeSaved, 0));
+  document.getElementById('interestSaved').textContent = fmtMoney(Math.max(interestSaved, 0));
+
+  document.getElementById('baseTime').textContent = fmtMonths(base.months);
+  document.getElementById('baseInterest').textContent = fmtMoney(base.totalInterest);
+  document.getElementById('baseTotal').textContent = fmtMoney(base.totalPaid);
+  document.getElementById('planTime').textContent = fmtMonths(plan.months);
+  document.getElementById('planInterest').textContent = fmtMoney(plan.totalInterest);
+  document.getElementById('planTotal').textContent = fmtMoney(plan.totalPaid);
+
+  const list = document.getElementById('scheduleList');
+  list.innerHTML = '';
+  plan.schedule.forEach((item, idx) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span><span class="order-num">${idx + 1}</span>${item.name}</span><span class="month-badge">Paid off month ${item.month}</span>`;
+    list.appendChild(li);
+  });
 
   document.getElementById('results').classList.add('active');
   document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 
   window.__lastResult = {
-    months: months,
-    totalInterest: Math.round(totalInterest),
-    totalPaid: Math.round(totalPaid),
-    balance: balance
+    strategy: strategy,
+    months: plan.months,
+    totalInterest: Math.round(plan.totalInterest),
+    totalPaid: Math.round(plan.totalPaid),
+    timeSaved: Math.max(timeSaved, 0),
+    interestSaved: Math.round(Math.max(interestSaved, 0))
   };
 }
 
@@ -288,6 +548,10 @@ async function sendReport() {
     btn.textContent = 'Email me';
   }
 }
+
+// Initialize with two starter rows
+addDebtRow();
+addDebtRow();
 </script>
 </body>
 </html>
