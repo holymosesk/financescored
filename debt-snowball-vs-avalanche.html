@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Debt Snowball vs. Avalanche: Which Strategy Actually Saves You More | FinanceScored</title>
+<meta name="description" content="Snowball and avalanche both work — but they optimize for different things. Here's the real math on both, using one worked example, so you can pick the one that fits you.">
+<link rel="canonical" href="https://www.financescored.com/debt-snowball-vs-avalanche.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Debt Snowball vs. Avalanche: Which Strategy Actually Saves You More">
+<meta property="og:description" content="Both strategies work. They just optimize for different things — money saved versus momentum. Here's the real math on both.">
+<meta property="og:url" content="https://www.financescored.com/debt-snowball-vs-avalanche.html">
+<meta property="og:site_name" content="FinanceScored">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Debt Snowball vs. Avalanche: Which Strategy Actually Saves You More">
+<meta name="twitter:description" content="Both strategies work. They optimize for different things. Here's the real math on both.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Debt Snowball vs. Avalanche: Which Strategy Actually Saves You More",
+  "description": "A worked comparison of the debt snowball and debt avalanche payoff strategies using a verified three-debt example, covering the real dollar and time tradeoffs between the two.",
+  "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
+  "publisher": { "@type": "Organization", "name": "FinanceScored" },
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/debt-snowball-vs-avalanche.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "FinanceScored", "item": "https://www.financescored.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Debt Payoff", "item": "https://www.financescored.com/debt-snowball-vs-avalanche.html" },
+    { "@type": "ListItem", "position": 3, "name": "Snowball vs. Avalanche", "item": "https://www.financescored.com/debt-snowball-vs-avalanche.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What's the difference between debt snowball and debt avalanche?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Avalanche pays minimums on everything and puts every extra dollar toward your highest-interest-rate debt first — mathematically optimal, saves the most money. Snowball puts every extra dollar toward your smallest balance first — usually costs a bit more in interest, but clears individual debts faster, which helps a lot of people stick with the plan." } },
+    { "@type": "Question", "name": "Is avalanche always better than snowball?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mathematically, avalanche almost always saves more in total interest, since it targets the most expensive debt first. But the gap between the two is often smaller than people expect, and snowball's psychological advantage — clearing full debts faster — can matter more in practice if it's the difference between finishing the plan and abandoning it partway through." } },
+    { "@type": "Question", "name": "How much more does snowball actually cost compared to avalanche?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends entirely on how spread out your interest rates are across your debts. In a worked example with three debts ranging from 7% to 24% APR, snowball cost about $1,600 more in total interest and took one extra month compared to avalanche — a real but modest gap relative to the total savings both strategies deliver over paying only minimums." } },
+    { "@type": "Question", "name": "Can I switch strategies partway through paying off debt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no penalty for switching from snowball to avalanche or vice versa. Some people start with snowball to build momentum with an early win, then switch to avalanche once they've built the habit and want to prioritize minimizing total interest instead." } }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+  --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+  --accent: #2563EB; --accent-light: #EFF6FF;
+  --success: #16A34A; --warning: #D97706;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+
+.nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+.nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+
+.breadcrumb-bar { background: #1A1A1A; padding: 0 1.25rem 0.75rem; }
+.breadcrumb-bar nav { font-size: 12px; color: rgba(255,255,255,0.4); max-width: 720px; margin: 0 auto; }
+.breadcrumb-bar a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+.hero { background: #1A1A1A; padding: 1rem 1.25rem 2.25rem; text-align: center; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.75rem; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: #fff; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto; line-height: 1.5; }
+
+.main { padding: 1.5rem 1.25rem; max-width: 760px; margin: 0 auto; }
+.card, .seo-section, .faq-section, .toc-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+
+.byline { display: flex; align-items: center; gap: 10px; background: var(--accent-light); border: 0.5px solid rgba(37,99,235,0.2); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 1rem; font-size: 13px; color: #1E40AF; line-height: 1.5; }
+.byline a { color: #1E40AF; font-weight: 600; text-decoration: underline; }
+
+.toc-card h2 { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; font-weight: 600; }
+.toc-card ol { padding-left: 1.1rem; columns: 2; column-gap: 1.25rem; }
+.toc-card li { font-size: 13.5px; margin-bottom: 0.4rem; }
+.toc-card a { color: var(--text-primary); text-decoration: none; }
+.toc-card a:hover { color: var(--accent); }
+@media (max-width: 480px) { .toc-card ol { columns: 1; } }
+
+.seo-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.4rem; margin-bottom: 0.75rem; }
+.seo-section h3 { font-size: 0.95rem; font-weight: 600; margin: 1.1rem 0 0.4rem; }
+.seo-section p, .seo-section li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.6rem; }
+.seo-section ul { padding-left: 1.2rem; margin-bottom: 0.6rem; }
+.seo-section strong { color: var(--text-primary); }
+
+.compare-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 1rem 0; }
+.compare-card { border-radius: var(--radius-sm); padding: 16px; border: 0.5px solid var(--border); }
+.compare-card .name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.compare-card.avalanche .name { color: var(--accent); }
+.compare-card.snowball .name { color: var(--warning); }
+.compare-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+@media (min-width: 560px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
+
+.table-wrap { overflow-x: auto; border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin: 0.75rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 10px 10px; text-align: left; border-bottom: 0.5px solid var(--border); }
+th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); background: var(--bg); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+tr.highlight-row td { font-weight: 700; background: var(--accent-light); }
+.table-note { font-size: 12.5px; color: var(--text-muted); margin-top: 0.5rem; }
+
+.stat-block { background: #1A1A1A; border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-align: center; }
+.stat-block .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+.stat-block .num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; }
+.stat-block .stat-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+.tool-callout { background: #1A1A1A; border-radius: var(--radius); padding: 1.75rem 1.25rem; margin-bottom: 1rem; text-align: center; }
+.tool-callout .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #93C5FD; margin-bottom: 0.5rem; }
+.tool-callout h3 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; color: #fff; margin-bottom: 0.6rem; }
+.tool-callout p { font-size: 13.5px; color: rgba(255,255,255,0.6); margin-bottom: 1rem; line-height: 1.55; }
+.btn-primary { display: inline-block; padding: 12px 22px; background: #fff; color: #1A1A1A; border: none; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.btn-primary:hover { opacity: 0.9; }
+
+.flag-list { list-style: none; }
+.flag-list li { border-left: 3px solid var(--warning); padding: 2px 0 2px 14px; margin-bottom: 12px; font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+.flag-list strong { color: var(--text-primary); }
+
+.faq-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 1rem; }
+.faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-q { font-size: 13.5px; font-weight: 600; margin-bottom: 0.35rem; }
+.faq-a { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.related-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.5rem; }
+.related-section > p { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 1rem; }
+.related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.related-card { display: block; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; text-decoration: none; color: var(--text-primary); font-size: 13.5px; font-weight: 500; }
+.related-card:hover { border-color: var(--accent); }
+.related-card .tag { display: block; font-size: 10.5px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600; }
+@media (min-width: 560px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+footer a { color: var(--text-muted); text-decoration: underline; }
+.disclaimer { font-size: 12px; color: var(--text-muted); text-align: center; margin: 0.5rem 0 1rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><img src="/fs-mark.svg" alt="" width="26" height="26" style="border-radius:50%;">FinanceScored</a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+<div class="breadcrumb-bar">
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / Debt Payoff / Snowball vs. Avalanche</nav>
+</div>
+
+<div class="hero">
+  <p class="hero-eyebrow">Debt Payoff</p>
+  <h1>Debt snowball vs. avalanche: which strategy actually saves you more</h1>
+  <p class="hero-sub">Both work. They just optimize for different things — total money saved versus momentum you'll actually stick with. Here's the real math on both.</p>
+</div>
+
+<div class="main">
+
+  <div class="byline">
+    <span>📋 This guide reflects real financial planning experience, checked against the actual math. <a href="/about.html">More on who writes FinanceScored →</a></span>
+  </div>
+
+  <nav class="toc-card" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#strategies">The two strategies</a></li>
+      <li><a href="#example">A verified worked example</a></li>
+      <li><a href="#calculator">Run your own numbers</a></li>
+      <li><a href="#choosing">Which one fits you</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#next">Related guides</a></li>
+    </ol>
+  </nav>
+
+  <div class="seo-section" id="strategies">
+    <h2>The two strategies</h2>
+    <div class="compare-grid">
+      <div class="compare-card avalanche">
+        <div class="name">Avalanche</div>
+        <p>Pay minimums on every debt, then throw every extra dollar at whichever one has the <strong>highest interest rate</strong>. Once that debt is gone, its entire minimum payment rolls onto the next-highest-rate debt. Mathematically optimal — minimizes total interest paid, full stop.</p>
+      </div>
+      <div class="compare-card snowball">
+        <div class="name">Snowball</div>
+        <p>Pay minimums on every debt, then throw every extra dollar at whichever one has the <strong>smallest balance</strong>, regardless of its interest rate. Once that debt is gone, its minimum payment rolls onto the next-smallest balance. Usually costs a bit more in interest, but clears individual debts faster.</p>
+      </div>
+    </div>
+    <p>Both strategies share the same core mechanic: minimums on everything, extra focus on one target at a time, and the freed-up minimum payment "snowballing" onto the next target once a debt is cleared. The only difference is which debt you pick as the target first — most expensive, or smallest.</p>
+  </div>
+
+  <div class="seo-section" id="example">
+    <h2>A verified worked example</h2>
+    <p>Three debts totaling $24,800, with $650/month in combined minimum payments and $150/month extra to put toward either strategy:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Debt</th><th class="num">Balance</th><th class="num">APR</th><th class="num">Min. Payment</th></tr></thead>
+        <tbody>
+          <tr><td>Credit Card</td><td class="num">$12,000</td><td class="num">24%</td><td class="num">$300</td></tr>
+          <tr><td>Personal Loan</td><td class="num">$6,000</td><td class="num">12%</td><td class="num">$150</td></tr>
+          <tr><td>Auto Loan</td><td class="num">$6,800</td><td class="num">7%</td><td class="num">$200</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Paying only the minimums on all three takes <strong>82 months</strong> and costs <strong>$14,885</strong> in total interest. Here's what changes with $150/month extra, under each strategy:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th class="num">Payoff Time</th><th class="num">Total Interest</th><th class="num">Payoff Order</th></tr></thead>
+        <tbody>
+          <tr><td>Minimums only</td><td class="num">82 months</td><td class="num">$14,885</td><td class="num">—</td></tr>
+          <tr class="highlight-row"><td>Avalanche</td><td class="num">42 months</td><td class="num">$7,733</td><td class="num">Card → Auto → Personal</td></tr>
+          <tr><td>Snowball</td><td class="num">43 months</td><td class="num">$9,335</td><td class="num">Personal → Auto → Card</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Avalanche attacks the credit card first because it carries the highest rate. Snowball attacks the personal loan first because it's the smallest balance, even though it's not the cheapest debt to carry.</p>
+    <p>Notice what actually separates the two strategies here: <strong>one month, and about $1,600 in interest</strong> — real money, but a modest gap relative to the $7,000+ both strategies save compared to only paying minimums. The decision that matters most isn't snowball-versus-avalanche. It's extra-payment-versus-no-extra-payment. Which specific strategy you pick is the smaller decision layered on top.</p>
+  </div>
+
+  <div class="stat-block">
+    <p class="label">The Real Gap Between Strategies, In This Example</p>
+    <p class="num">1 month · $1,602</p>
+    <p class="stat-note">Avalanche saves $7,152 vs. minimums-only; snowball saves $5,550. Both dwarf the $1,602 gap between the two strategies themselves.</p>
+  </div>
+
+  <div class="tool-callout" id="calculator">
+    <p class="eyebrow">Free Tool</p>
+    <h3>Run this exact example, or your own numbers</h3>
+    <p>Plug in the three debts above to see this exact result, or add your own debts and compare both strategies side by side.</p>
+    <a class="btn-primary" href="/debt-payoff-calculator.html">Open the Debt Payoff Calculator →</a>
+  </div>
+
+  <div class="seo-section" id="choosing">
+    <h2>Which one actually fits you</h2>
+    <ul>
+      <li><strong>Choose avalanche if:</strong> you're motivated by the math itself, you've stuck with financial plans before without needing quick wins, and minimizing total interest matters more to you than the order debts disappear in.</li>
+      <li><strong>Choose snowball if:</strong> you've tried paying down debt before and lost momentum partway through, or you know from experience that seeing a debt fully disappear — not just shrink — is what keeps you engaged with a plan.</li>
+      <li><strong>Either way:</strong> the extra payment is doing almost all of the work. The strategy choice is a smaller optimization on top of a much bigger decision — whether you're paying extra at all.</li>
+    </ul>
+    <p>You're also not locked in. Plenty of people start with snowball to build the habit with an early win, then switch to avalanche once the discipline is established and they want to prioritize the math instead.</p>
+  </div>
+
+  <div class="seo-section" id="mistakes">
+    <h2>Mistakes that undercut either strategy</h2>
+    <ul class="flag-list">
+      <li><strong>Splitting the extra payment across multiple debts.</strong> The entire mechanism depends on concentrating extra money on one target at a time. Spreading it thin across several debts slows every single one down instead of clearing any of them faster.</li>
+      <li><strong>Forgetting the roll-forward.</strong> Once a debt is paid off, its full minimum payment needs to move to the next target, not disappear into your regular budget. Skipping this step is the single biggest reason people don't get the acceleration either strategy promises.</li>
+      <li><strong>Picking snowball but expecting avalanche's savings.</strong> Snowball is a legitimate, research-supported strategy — but it isn't free. Go in knowing you're trading some interest savings for psychological momentum, not stumbling onto that tradeoff later.</li>
+      <li><strong>Taking on new debt while executing either plan.</strong> A new balance added mid-plan resets the math and often the motivation along with it.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section" id="faq">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><p class="faq-q">What's the difference between debt snowball and debt avalanche?</p><p class="faq-a">Avalanche pays minimums on everything and puts every extra dollar toward your highest-interest-rate debt first — mathematically optimal, saves the most money. Snowball puts every extra dollar toward your smallest balance first — usually costs a bit more in interest, but clears individual debts faster, which helps a lot of people stick with the plan.</p></div>
+    <div class="faq-item"><p class="faq-q">Is avalanche always better than snowball?</p><p class="faq-a">Mathematically, avalanche almost always saves more in total interest, since it targets the most expensive debt first. But the gap between the two is often smaller than people expect, and snowball's psychological advantage — clearing full debts faster — can matter more in practice if it's the difference between finishing the plan and abandoning it partway through.</p></div>
+    <div class="faq-item"><p class="faq-q">How much more does snowball actually cost compared to avalanche?</p><p class="faq-a">It depends entirely on how spread out your interest rates are across your debts. In a worked example with three debts ranging from 7% to 24% APR, snowball cost about $1,600 more in total interest and took one extra month compared to avalanche — a real but modest gap relative to the total savings both strategies deliver over paying only minimums.</p></div>
+    <div class="faq-item"><p class="faq-q">Can I switch strategies partway through paying off debt?</p><p class="faq-a">Yes. There's no penalty for switching from snowball to avalanche or vice versa. Some people start with snowball to build momentum with an early win, then switch to avalanche once they've built the habit and want to prioritize minimizing total interest instead.</p></div>
+  </div>
+
+  <div class="card related-section" id="next">
+    <h2>Related guides</h2>
+    <p>The start of our Debt Payoff series.</p>
+    <div class="related-grid">
+      <a class="related-card" href="/debt-payoff-calculator.html"><span class="tag">Tool</span>Debt Payoff Calculator</a>
+      <a class="related-card" href="/simple-vs-compound-interest.html"><span class="tag">Investing</span>Simple vs. Compound Interest</a>
+      <a class="related-card" href="/dollar-cost-averaging.html"><span class="tag">Investing</span>Dollar-Cost Averaging Explained</a>
+      <a class="related-card" href="/investing.html"><span class="tag">Pillar Guide</span>Investing 101: How to Start</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This article is for educational purposes and does not constitute financial advice.</p>
+
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
