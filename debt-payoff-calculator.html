@@ -502,7 +502,9 @@ function calculate() {
     totalInterest: Math.round(plan.totalInterest),
     totalPaid: Math.round(plan.totalPaid),
     timeSaved: Math.max(timeSaved, 0),
-    interestSaved: Math.round(Math.max(interestSaved, 0))
+    interestSaved: Math.round(Math.max(interestSaved, 0)),
+    extra: extra,
+    schedule: plan.schedule
   };
 }
 
