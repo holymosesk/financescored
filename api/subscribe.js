@@ -126,11 +126,11 @@ export default async function handler(req, res) {
       <div style="padding: 20px; background: #EFF6FF; border-radius: 8px; margin-bottom: 20px;">
         ${savingsHtml}
         ${scheduleHtml}
-        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0;">${strategyNote} Every extra dollar you put toward debt is a guaranteed return equal to its interest rate — paying off a 20%+ APR card is mathematically similar to earning a risk-free 20% return, a bar almost no investment clears reliably.</p>
+        <p style="font-size: 13px; color: #1E40AF; line-height: 1.6; margin: 0 0 16px;">${strategyNote} Every extra dollar you put toward debt is a guaranteed return equal to its interest rate — paying off a 20%+ APR card is mathematically similar to earning a risk-free 20% return, a bar almost no investment clears reliably.</p>
+        <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #1E40AF; font-weight: 600; margin: 0 0 10px;">Worth reading next</p>
+        <p style="font-size: 13px; margin: 0;"><a href="https://financescored.com/debt-snowball-vs-avalanche.html" style="color: #2563EB; text-decoration: none;">→ Debt Snowball vs. Avalanche: Which Strategy Actually Saves You More</a></p>
       </div>`;
-    // Note: link to a dedicated Snowball vs. Avalanche article once it's published —
-    // that's next in the build queue for this silo. Add it here once live, rather
-    // than linking to a page that doesn't exist yet.
+    // Debt Payoff silo now has its first article live — link added above.
 
   } else if (tool === 'tracker') {
     // No calculator result to show — this is the interactive tracker download flow.
