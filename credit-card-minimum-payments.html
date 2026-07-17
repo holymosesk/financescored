@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Credit Card Minimum Payments: The Real Cost of Paying the Least | FinanceScored</title>
+<meta name="description" content="Minimum payments shrink as your balance shrinks — which is exactly why they trap people. Here's the real math, and the one habit that fixes it without spending an extra dollar.">
+<link rel="canonical" href="https://www.financescored.com/credit-card-minimum-payments.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Credit Card Minimum Payments: The Real Cost of Paying the Least">
+<meta property="og:description" content="Minimum payments shrink as your balance shrinks — which is exactly why they trap people. Here's the real math.">
+<meta property="og:url" content="https://www.financescored.com/credit-card-minimum-payments.html">
+<meta property="og:site_name" content="FinanceScored">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Credit Card Minimum Payments: The Real Cost of Paying the Least">
+<meta name="twitter:description" content="Minimum payments shrink as your balance shrinks — here's the real math on why that traps people.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Credit Card Minimum Payments: The Real Cost of Paying the Least",
+  "description": "How credit card minimum payments are actually calculated, why the declining-balance formula extends payoff for decades, and a verified comparison showing what happens if the payment is kept fixed instead.",
+  "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
+  "publisher": { "@type": "Organization", "name": "FinanceScored" },
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/credit-card-minimum-payments.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "FinanceScored", "item": "https://www.financescored.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Debt Payoff", "item": "https://www.financescored.com/debt-payoff.html" },
+    { "@type": "ListItem", "position": 3, "name": "Credit Card Minimum Payments", "item": "https://www.financescored.com/credit-card-minimum-payments.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How is a credit card minimum payment calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most issuers use a formula like 1-3% of your remaining balance plus that month's interest, with a flat-dollar floor (often $25-35) for small balances. The exact formula varies by issuer and is disclosed in your cardholder agreement, but the common thread is that the payment shrinks as your balance shrinks." } },
+    { "@type": "Question", "name": "Why does my minimum payment keep going down?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because most minimum payment formulas are a percentage of your current balance. As you pay the balance down, that percentage produces a smaller dollar amount each month, which extends how long it takes to reach zero and increases total interest paid, even though you're technically making progress every month." } },
+    { "@type": "Question", "name": "Is there a legal requirement to warn me about minimum payments?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Under the CARD Act of 2009, every credit card statement carrying a balance must include a Minimum Payment Warning box showing how long payoff will take and the total interest cost at minimum payments only, alongside the monthly payment needed to clear the balance in 36 months instead." } },
+    { "@type": "Question", "name": "Does paying a fixed amount instead of the minimum really make that much difference?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, dramatically. In a verified example on a $5,000 balance at 22% APR, letting the payment decline with a standard minimum-payment formula took 19.2 years and cost $8,100 in interest. Keeping the payment fixed at that same starting dollar amount instead — without paying a single extra dollar overall in any given month — cut that to 4.8 years and roughly $3,100 in interest." } }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --surface: #FFFFFF; --border: rgba(0,0,0,0.08);
+  --text-primary: #1A1A1A; --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+  --accent: #2563EB; --accent-light: #EFF6FF;
+  --success: #16A34A; --warning: #D97706;
+  --radius: 12px; --radius-sm: 8px;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-primary); min-height: 100vh; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+
+.nav { background: #1A1A1A; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Serif Display', serif; color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; }
+.nav-cta { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
+
+.breadcrumb-bar { background: #1A1A1A; padding: 0 1.25rem 0.75rem; }
+.breadcrumb-bar nav { font-size: 12px; color: rgba(255,255,255,0.4); max-width: 720px; margin: 0 auto; }
+.breadcrumb-bar a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+.hero { background: #1A1A1A; padding: 1rem 1.25rem 2.25rem; text-align: center; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; margin-bottom: 0.75rem; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: #fff; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 540px; margin: 0 auto; line-height: 1.5; }
+
+.main { padding: 1.5rem 1.25rem; max-width: 720px; margin: 0 auto; }
+.card, .seo-section, .faq-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
+
+.byline { display: flex; align-items: center; gap: 10px; background: var(--accent-light); border: 0.5px solid rgba(37,99,235,0.2); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 1rem; font-size: 13px; color: #1E40AF; line-height: 1.5; }
+.byline a { color: #1E40AF; font-weight: 600; text-decoration: underline; }
+
+.seo-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.3rem; margin-bottom: 0.75rem; }
+.seo-section h3 { font-size: 0.95rem; font-weight: 600; margin: 1.1rem 0 0.4rem; }
+.seo-section p, .seo-section li { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.6rem; }
+.seo-section ul { padding-left: 1.2rem; margin-bottom: 0.6rem; }
+.seo-section strong { color: var(--text-primary); }
+
+.table-wrap { overflow-x: auto; border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin: 0.75rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 10px 10px; text-align: left; border-bottom: 0.5px solid var(--border); }
+th { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); background: var(--bg); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: none; }
+tr.highlight-row td { font-weight: 700; background: var(--accent-light); }
+
+.stat-block { background: #1A1A1A; border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-align: center; }
+.stat-block .label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+.stat-block .num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #fff; }
+.stat-block .stat-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+.win-box { background: #ECFDF5; border: 1px solid rgba(22,163,74,0.25); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+.win-box h2 { color: #15803D; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.2rem; margin-bottom: 0.6rem; }
+.win-box p { font-size: 13.5px; color: #166534; margin-bottom: 0.6rem; line-height: 1.6; }
+
+.warn-box { background: #FEF3E2; border: 1px solid rgba(217,119,6,0.25); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+.warn-box h2 { color: #92400E; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.2rem; margin-bottom: 0.6rem; }
+.warn-box p { font-size: 13.5px; color: #78350F; margin-bottom: 0.6rem; line-height: 1.6; }
+
+.tool-callout { background: #1A1A1A; border-radius: var(--radius); padding: 1.75rem 1.25rem; margin-bottom: 1rem; text-align: center; }
+.tool-callout .eyebrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #93C5FD; margin-bottom: 0.5rem; }
+.tool-callout h3 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; color: #fff; margin-bottom: 0.6rem; }
+.tool-callout p { font-size: 13.5px; color: rgba(255,255,255,0.6); margin-bottom: 1rem; line-height: 1.55; }
+.btn-primary { display: inline-block; padding: 12px 22px; background: #fff; color: #1A1A1A; border: none; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.btn-primary:hover { opacity: 0.9; }
+
+.flag-list { list-style: none; }
+.flag-list li { border-left: 3px solid var(--warning); padding: 2px 0 2px 14px; margin-bottom: 12px; font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+.flag-list strong { color: var(--text-primary); }
+
+.faq-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 1rem; }
+.faq-item { border-bottom: 0.5px solid var(--border); padding: 0.75rem 0; }
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-q { font-size: 13.5px; font-weight: 600; margin-bottom: 0.35rem; }
+.faq-a { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+
+.related-section h2 { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.25rem; margin-bottom: 0.5rem; }
+.related-section > p { font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; }
+.related-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.related-card { display: block; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; text-decoration: none; color: var(--text-primary); font-size: 13.5px; font-weight: 500; }
+.related-card:hover { border-color: var(--accent); }
+.related-card .tag { display: block; font-size: 10.5px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600; }
+@media (min-width: 560px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+
+footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+footer a { color: var(--text-muted); text-decoration: underline; }
+.disclaimer { font-size: 12px; color: var(--text-muted); text-align: center; margin: 0.5rem 0 1rem; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><img src="/fs-mark.svg" alt="" width="26" height="26" style="border-radius:50%;">FinanceScored</a>
+  <a href="/" class="nav-cta">← All tools</a>
+</nav>
+<div class="breadcrumb-bar">
+  <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/debt-payoff.html">Debt Payoff</a> / Credit Card Minimum Payments</nav>
+</div>
+
+<div class="hero">
+  <p class="hero-eyebrow">Debt Payoff</p>
+  <h1>Credit card minimum payments: the real cost of paying the least</h1>
+  <p class="hero-sub">The payment shrinks as your balance shrinks — which sounds like relief, but it's exactly what stretches payoff into decades.</p>
+</div>
+
+<div class="main">
+
+  <div class="byline">
+    <span>📋 This guide reflects real financial planning experience, checked against the actual math. <a href="/about.html">More on who writes FinanceScored →</a></span>
+  </div>
+
+  <div class="seo-section">
+    <p>Making the minimum payment feels responsible — you're not missing a payment, your balance is technically going down, nothing's on fire. The part that doesn't show up on the statement is how the minimum payment formula itself works against you: as your balance shrinks, your required payment shrinks with it, which drags out payoff far longer than most people expect.</p>
+  </div>
+
+  <div class="seo-section">
+    <h2>How minimum payments are actually calculated</h2>
+    <p>Most issuers use some version of: <strong>1-3% of your current balance, plus that month's interest</strong>, with a flat-dollar floor (often $25-35) so very small balances don't produce an unrealistically tiny payment. The exact formula varies by issuer and is disclosed in your cardholder agreement, but the common thread across nearly all of them is the same — the payment is a percentage of whatever you currently owe.</p>
+    <p>That's the trap. As the balance goes down, the required payment goes down too, so more of every future payment gets eaten by interest relative to principal, and payoff stretches out far longer than it needs to.</p>
+  </div>
+
+  <div class="warn-box">
+    <h2>Your statement already tells you this — it's the law</h2>
+    <p>Under the CARD Act of 2009, every credit card statement carrying a balance is legally required to include a <strong>Minimum Payment Warning</strong> box. It has to show two things: how long payoff will take and the total interest cost if you only ever pay the minimum, and separately, the fixed monthly payment needed to clear the balance in exactly 36 months instead, along with how much that would save.</p>
+    <p>It's one of the most useful pieces of financial information most people scroll past every month without reading.</p>
+  </div>
+
+  <div class="seo-section">
+    <h2>The real numbers, verified</h2>
+    <p>Take a $5,000 balance at 22% APR, minimum payment calculated as 1% of the balance plus that month's interest (a common, realistic formula), paying only the minimum every month:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th class="num">Payoff Time</th><th class="num">Total Interest</th></tr></thead>
+        <tbody>
+          <tr><td>Declining minimum payment</td><td class="num">19.2 years</td><td class="num">$8,100</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Now here's the part almost nobody's told: the very first minimum payment on that balance is <strong>$141.67</strong>. If you simply kept paying that exact same $141.67 every single month — never increasing it, never adding a single extra dollar beyond what the very first bill asked for — here's what happens instead:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th class="num">Payoff Time</th><th class="num">Total Interest</th></tr></thead>
+        <tbody>
+          <tr><td>Declining minimum</td><td class="num">19.2 years</td><td class="num">$8,100</td></tr>
+          <tr class="highlight-row"><td>Fixed at $141.67/mo</td><td class="num">4.8 years</td><td class="num">$3,121</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Same card, same rate, same starting payment amount. The only difference is refusing to let the payment shrink as the balance does.</p>
+  </div>
+
+  <div class="stat-block">
+    <p class="label">Time & Interest Saved, Same Starting Dollar Amount</p>
+    <p class="num">14.3 yrs · $4,979</p>
+    <p class="stat-note">Just by keeping the payment fixed instead of letting it decline with the balance — no extra money required in any given month.</p>
+  </div>
+
+  <div class="win-box">
+    <h2>Why this works</h2>
+    <p>Every month you keep the payment fixed while the balance drops, a slightly larger share of that same payment goes toward principal instead of interest — because interest is calculated on a shrinking balance, but your payment isn't shrinking along with it. It's the same mechanism that makes extra payments so powerful in <a href="/debt-snowball-vs-avalanche.html">snowball and avalanche strategies</a>, just applied to a single card instead of multiple debts.</p>
+    <p>This isn't a hack or a trick — it's simply declining to take the "relief" your card issuer's formula quietly offers you every month.</p>
+  </div>
+
+  <div class="tool-callout">
+    <p class="eyebrow">Free Tool</p>
+    <h3>See what a fixed payment does to your actual balance</h3>
+    <p>Enter your real balance and rate, then compare a fixed monthly payment against letting it decline.</p>
+    <a class="btn-primary" href="/debt-payoff-calculator.html">Open the Debt Payoff Calculator →</a>
+  </div>
+
+  <div class="seo-section">
+    <h2>Mistakes that make this worse</h2>
+    <ul class="flag-list">
+      <li><strong>Treating a lower minimum payment as good news.</strong> A shrinking minimum payment isn't your card issuer doing you a favor — it's the mechanism that maximizes how long you carry (and pay interest on) a balance.</li>
+      <li><strong>Ignoring the Minimum Payment Warning box.</strong> It's on every statement with a balance, by law, and it already does the payoff-time and total-interest math for your exact account. Most people never read it.</li>
+      <li><strong>Adding new charges while "paying it down."</strong> A fixed payment strategy only works if the balance it's calculated against isn't quietly growing every month from new spending.</li>
+      <li><strong>Assuming minimum payments alone will ever meaningfully reduce a large balance.</strong> On high balances at high rates, minimum-only payments can take multiple decades — long past when the original purchase is even a memory.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><p class="faq-q">How is a credit card minimum payment calculated?</p><p class="faq-a">Most issuers use a formula like 1-3% of your remaining balance plus that month's interest, with a flat-dollar floor (often $25-35) for small balances. The exact formula varies by issuer and is disclosed in your cardholder agreement, but the common thread is that the payment shrinks as your balance shrinks.</p></div>
+    <div class="faq-item"><p class="faq-q">Why does my minimum payment keep going down?</p><p class="faq-a">Because most minimum payment formulas are a percentage of your current balance. As you pay the balance down, that percentage produces a smaller dollar amount each month, which extends how long it takes to reach zero and increases total interest paid, even though you're technically making progress every month.</p></div>
+    <div class="faq-item"><p class="faq-q">Is there a legal requirement to warn me about minimum payments?</p><p class="faq-a">Yes. Under the CARD Act of 2009, every credit card statement carrying a balance must include a Minimum Payment Warning box showing how long payoff will take and the total interest cost at minimum payments only, alongside the monthly payment needed to clear the balance in 36 months instead.</p></div>
+    <div class="faq-item"><p class="faq-q">Does paying a fixed amount instead of the minimum really make that much difference?</p><p class="faq-a">Yes, dramatically. In a verified example on a $5,000 balance at 22% APR, letting the payment decline with a standard minimum-payment formula took 19.2 years and cost $8,100 in interest. Keeping the payment fixed at that same starting dollar amount instead — without paying a single extra dollar overall in any given month — cut that to 4.8 years and roughly $3,100 in interest.</p></div>
+  </div>
+
+  <div class="card related-section">
+    <h2>Related guides</h2>
+    <p>Part of our Debt Payoff series.</p>
+    <div class="related-grid">
+      <a class="related-card" href="/debt-payoff.html"><span class="tag">Pillar Guide</span>Debt Payoff: The Real Plan</a>
+      <a class="related-card" href="/debt-snowball-vs-avalanche.html"><span class="tag">Debt Payoff</span>Snowball vs. Avalanche</a>
+      <a class="related-card" href="/debt-payoff-calculator.html"><span class="tag">Tool</span>Debt Payoff Calculator</a>
+      <a class="related-card" href="/simple-vs-compound-interest.html"><span class="tag">Investing</span>Simple vs. Compound Interest</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This article is for educational purposes and does not constitute financial advice.</p>
+
+</div>
+
+<footer>
+  FinanceScored.com · Free Financial Tools · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
