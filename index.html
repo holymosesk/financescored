@@ -7,19 +7,19 @@
 <meta name="p:domain_verify" content="c1d04b202c66ac09e00eee2c3740eb4d"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FinanceScored – Free Financial Calculators & Tools</title>
-<meta name="description" content="Free calculators for mortgages, compound interest, and debt payoff. Instant results, no signup required.">
+<title>FinanceScored – Free Financial Calculators &amp; Guides</title>
+<meta name="description" content="Free calculators and guides for home buying, investing, debt payoff, and credit scores. Instant results, no signup required.">
 <link rel="canonical" href="https://www.financescored.com/">
 
-<meta property="og:title" content="FinanceScored – Free Financial Calculators & Tools">
-<meta property="og:description" content="Free calculators for mortgages, compound interest, and debt payoff. Instant results, no signup required.">
+<meta property="og:title" content="FinanceScored – Free Financial Calculators & Guides">
+<meta property="og:description" content="Free calculators and guides for home buying, investing, debt payoff, and credit scores. Instant results, no signup required.">
 <meta property="og:url" content="https://www.financescored.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FinanceScored">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FinanceScored – Free Financial Calculators & Tools">
-<meta name="twitter:description" content="Free calculators for mortgages, compound interest, and debt payoff.">
+<meta name="twitter:title" content="FinanceScored – Free Financial Calculators & Guides">
+<meta name="twitter:description" content="Free calculators and guides for home buying, investing, debt payoff, and credit scores.">
 
 <script type="application/ld+json">
 {
@@ -27,7 +27,7 @@
   "@type": "WebSite",
   "name": "FinanceScored",
   "url": "https://www.financescored.com",
-  "description": "Free financial calculators including mortgage affordability, compound interest, and debt payoff tools."
+  "description": "Free financial calculators and guides covering home buying, investing, debt payoff, and credit scores."
 }
 </script>
 
@@ -51,20 +51,35 @@
   .badge { font-size: 11px; padding: 4px 10px; border-radius: 20px; border: 0.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); text-decoration: none; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
   .badge:hover { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.9); }
   .main { padding: 1.5rem 1.25rem; max-width: 720px; margin: 0 auto; }
-  .tool-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-decoration: none; display: block; color: var(--text-primary); transition: border-color 0.15s; }
-  .tool-card:hover { border-color: var(--accent); }
+
   .section-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin: 1.5rem 0 0.75rem; padding: 0 0.1rem; }
   .section-label:first-of-type { margin-top: 0; }
+
+  /* Topic pillar cards */
+  .topic-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 1rem; }
+  .topic-card { display: block; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; color: var(--text-primary); transition: border-color 0.15s; position: relative; }
+  .topic-card:hover { border-color: var(--accent); }
+  .topic-card .topic-icon { font-size: 26px; margin-bottom: 0.5rem; }
+  .topic-card .topic-title { font-family: 'DM Serif Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .topic-card .topic-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 0.6rem; }
+  .topic-card .topic-count { font-size: 11.5px; color: var(--accent); font-weight: 600; }
+  .topic-card .topic-badge-new { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; background: #FEF3E2; color: #92400E; padding: 2px 8px; border-radius: 20px; position: absolute; top: 1.25rem; right: 1.25rem; }
+  @media (min-width: 560px) { .topic-grid { grid-template-columns: 1fr 1fr; } }
+
+  .tool-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-decoration: none; display: block; color: var(--text-primary); transition: border-color 0.15s; }
+  .tool-card:hover { border-color: var(--accent); }
+  .tool-icon { font-size: 28px; margin-bottom: 0.5rem; }
+  .tool-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .tool-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
+  .tool-cta { font-size: 13px; color: var(--accent); font-weight: 500; }
+
   .article-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; text-decoration: none; display: block; color: var(--text-primary); transition: border-color 0.15s; }
   .article-card:hover { border-color: var(--accent); }
   .article-tag { display: inline-block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); font-weight: 700; background: var(--accent-light); padding: 3px 9px; border-radius: 20px; margin-bottom: 8px; }
   .article-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
   .article-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
   .article-cta { font-size: 13px; color: var(--accent); font-weight: 500; }
-  .tool-icon { font-size: 28px; margin-bottom: 0.5rem; }
-  .tool-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
-  .tool-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; }
-  .tool-cta { font-size: 13px; color: var(--accent); font-weight: 500; }
+
   .seo-section { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-bottom: 1rem; }
   .seo-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
   .seo-section p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.5rem; }
@@ -87,9 +102,9 @@
 </nav>
 
 <div class="hero">
-  <p class="hero-eyebrow">Free Financial Tools</p>
+  <p class="hero-eyebrow">Free Financial Tools &amp; Guides</p>
   <h1>Know your numbers<br>before you <span>make the move</span></h1>
-  <p class="hero-sub">Instant calculators. No signup. Completely free.</p>
+  <p class="hero-sub">Instant calculators, real guides. No signup. Completely free.</p>
   <div class="badges">
     <a href="/mortgage-calculator.html" class="badge">Mortgage Affordability</a>
     <a href="/compound-interest-calculator.html" class="badge">Compound Interest</a>
@@ -98,6 +113,39 @@
 </div>
 
 <div class="main">
+
+  <p class="section-label">Explore by Topic</p>
+
+  <div class="topic-grid">
+    <a href="/home-buying.html" class="topic-card">
+      <div class="topic-icon">🏠</div>
+      <div class="topic-title">Home Buying</div>
+      <div class="topic-desc">Salary-by-salary affordability, down payments, DTI ratios lenders actually use, and every step of getting a mortgage.</div>
+      <div class="topic-count">9 guides →</div>
+    </a>
+
+    <a href="/investing.html" class="topic-card">
+      <div class="topic-icon">📈</div>
+      <div class="topic-title">Investing</div>
+      <div class="topic-desc">Compound interest, 401(k) vs. IRA vs. Roth, dollar-cost averaging, and what you're actually buying with stocks, ETFs, and mutual funds.</div>
+      <div class="topic-count">5 guides →</div>
+    </a>
+
+    <a href="/debt-payoff.html" class="topic-card">
+      <div class="topic-icon">💳</div>
+      <div class="topic-title">Debt Payoff</div>
+      <div class="topic-desc">Snowball vs. avalanche, the 10/10/80 budget rule, and why minimum payments quietly work against you.</div>
+      <div class="topic-count">3 guides →</div>
+    </a>
+
+    <a href="/what-is-a-credit-score.html" class="topic-card">
+      <span class="topic-badge-new">New</span>
+      <div class="topic-icon">📊</div>
+      <div class="topic-title">Credit Scores</div>
+      <div class="topic-desc">What actually goes into a FICO score, how much each factor is weighted, and what's not in the calculation at all.</div>
+      <div class="topic-count">1 guide →</div>
+    </a>
+  </div>
 
   <p class="section-label">Free Calculators</p>
 
@@ -118,38 +166,17 @@
   <a href="/debt-payoff-calculator.html" class="tool-card">
     <div class="tool-icon">💳</div>
     <div class="tool-title">Debt Payoff Calculator</div>
-    <div class="tool-desc">Build a payoff plan and see exactly when you'll be debt-free.</div>
+    <div class="tool-desc">Add every debt, pick snowball or avalanche, and see exactly when you'll be debt-free.</div>
     <div class="tool-cta">Calculate now →</div>
   </a>
 
-  <p class="section-label">Guides &amp; Resources</p>
+  <p class="section-label">Start Here</p>
 
   <a href="/first-time-home-buyer-roadmap.html" class="article-card">
     <span class="article-tag">Start Here</span>
     <div class="article-title">First-Time Home Buyer Roadmap</div>
     <div class="article-desc">Every step in order, from building credit to closing day, with realistic timeframes.</div>
     <div class="article-cta">See the roadmap →</div>
-  </a>
-
-  <a href="/home-buying.html" class="article-card">
-    <span class="article-tag">Home Buying</span>
-    <div class="article-title">How Much House Can You Afford? — Full Guide</div>
-    <div class="article-desc">A salary-by-salary breakdown using today's mortgage rates and the DTI ratios lenders actually approve.</div>
-    <div class="article-cta">Read the guide →</div>
-  </a>
-
-  <a href="/mortgage-application-checklist.html" class="article-card">
-    <span class="article-tag">Getting Ready</span>
-    <div class="article-title">Mortgage Application Checklist</div>
-    <div class="article-desc">The 5 non-negotiable documents every lender requires, plus the full list organized by situation.</div>
-    <div class="article-cta">Read the guide →</div>
-  </a>
-
-  <a href="/mortgage-broker-vs-bank-vs-lender.html" class="article-card">
-    <span class="article-tag">Getting Ready</span>
-    <div class="article-title">Bank vs. Retail Lender vs. Mortgage Broker</div>
-    <div class="article-desc">The real differences in rate shopping, fees, and flexibility — from someone who's worked all three sides.</div>
-    <div class="article-cta">Read the guide →</div>
   </a>
 
   <div class="seo-section">
