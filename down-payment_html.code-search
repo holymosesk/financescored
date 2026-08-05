@@ -1,0 +1,102 @@
+# Query: down-payment.html
+# ContextLines: 1
+
+21 results - 14 files
+
+2-1-buydown-explained.html:
+  245        <li><strong>You plan to stay in the home at least 3-5 years.</strong> If you refinance or sell before the buydown period ends, you lose access to the remaining subsidized payments.</li>
+  246:       <li><strong>The seller won't move on price but will offer a concession.</strong> If a lower purchase price is genuinely on the table instead, that's usually the better ask — it's permanent, not temporary. See the seller concessions section in our <a href="/how-much-down-payment.html">down payment guide</a> for how these concessions typically get negotiated.</li>
+  247        <li><strong>Rates are elevated and expected to fall.</strong> A 2-1 buydown buys time to refinance into a genuinely lower permanent rate once the market shifts, without straining your budget in the meantime.</li>
+
+  274        <a class="related-card" href="/fha-vs-conventional.html"><span class="tag">Loan Types</span>FHA vs. Conventional</a>
+  275:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  276        <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+
+15-year-vs-30-year-mortgage.html:
+  277        <a class="related-card" href="/401k-vs-ira-vs-roth.html"><span class="tag">Investing</span>401(k) vs. IRA vs. Roth</a>
+  278:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  279        <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+
+afford-on-75k-salary.html:
+  283        <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+  284:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  285      </div>
+
+afford-on-100k-salary.html:
+  283        <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+  284:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  285      </div>
+
+fha-vs-conventional.html:
+  219      <p>This is the single biggest long-term cost difference between the two, and it's more important than the interest rate for most buyers. Conventional PMI cancels automatically once you reach 78% loan-to-value — meaning it eventually goes away on its own. FHA MIP works differently: if your down payment was under 10%, it typically lasts for the life of the loan. Put down 10% or more, and it drops off after 11 years — still much longer than most conventional PMI timelines.</p>
+  220:     <p>The only way to remove FHA MIP early in most cases is refinancing into a conventional loan once your credit and equity support it — which is a real, common strategy, but it's a plan, not something that happens automatically. For the full mechanics of both — rates, upfront costs, cancellation rules — see the mortgage insurance breakdown in our <a href="/how-much-down-payment.html">down payment guide</a>.</p>
+  221    </div>
+
+  269        <a class="related-card" href="/2-1-buydown-explained.html"><span class="tag">Loan Terms</span>2-1 Buydown Explained</a>
+  270:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  271        <a class="related-card" href="/mortgage-pre-approval-explained.html"><span class="tag">Getting Ready</span>Mortgage Pre-Approval Explained</a>
+
+hidden-costs-of-homeownership.html:
+  193        <span class="range">0.5%-1.5% of the loan annually</span>
+  194:       <p>Covered in detail in our <a href="/how-much-down-payment.html">down payment guide</a> — this runs until you hit roughly 78-80% loan-to-value. It's not permanent, but it's a real monthly cost in the early years of the loan.</p>
+  195      </div>
+
+  260        <a class="related-card" href="/home-buying.html"><span class="tag">Pillar Guide</span>How Much House Can You Really Afford?</a>
+  261:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  262        <a class="related-card" href="/first-time-home-buyer-roadmap.html"><span class="tag">Start Here</span>First-Time Home Buyer Roadmap</a>
+
+home-buying.html:
+  320        <a class="related-card" href="/15-year-vs-30-year-mortgage.html"><span class="tag">Investing</span>15-Year vs 30-Year Mortgage</a>
+  321:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  322        <a class="related-card" href="/renting-vs-buying.html"><span class="tag">Rent vs Buy</span>Renting vs Buying: Break-Even Guide</a>
+
+how-much-down-payment.html:
+   8  <meta name="description" content="Down payments start at 0% for VA/USDA and 3.5% for FHA — not 20%. Here's where the money can legitimately come from: gift funds, assistance programs, and seller concessions.">
+   9: <link rel="canonical" href="https://www.financescored.com/how-much-down-payment.html">
+  10  
+
+  13  <meta property="og:description" content="Minimum down payments by loan type, and where the money can legitimately come from beyond your own savings.">
+  14: <meta property="og:url" content="https://www.financescored.com/how-much-down-payment.html">
+  15  <meta property="og:site_name" content="FinanceScored">
+
+  26    "dateModified": "2026-07-12",
+  27:   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/how-much-down-payment.html" }
+  28  }
+
+  36      { "@type": "ListItem", "position": 2, "name": "Home Buying", "item": "https://www.financescored.com/home-buying.html" },
+  37:     { "@type": "ListItem", "position": 3, "name": "Down Payment", "item": "https://www.financescored.com/how-much-down-payment.html" }
+  38    ]
+
+investing.html:
+  252        <a class="related-card" href="/home-buying.html"><span class="tag">Pillar Guide</span>How Much House Can You Really Afford?</a>
+  253:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  254        <a class="related-card" href="/debt-payoff-calculator.html"><span class="tag">Tool</span>Debt Payoff Calculator</a>
+
+mortgage-application-checklist.html:
+  369        <a class="related-card" href="/afford-on-75k-salary.html"><span class="tag">Salary Breakdown</span>$75,000 Salary: How Much House?</a>
+  370:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  371        <a class="related-card" href="/mortgage-broker-vs-bank-vs-lender.html"><span class="tag">Getting Ready</span>Bank vs. Broker vs. Retail Lender</a>
+
+mortgage-broker-vs-bank-vs-lender.html:
+  323        <a class="related-card" href="/mortgage-pre-approval-explained.html"><span class="tag">Getting Ready</span>Mortgage Pre-Approval Explained</a>
+  324:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  325        <a class="related-card" href="/hidden-costs-of-homeownership.html"><span class="tag">Ownership Costs</span>Hidden Costs of Homeownership</a>
+
+mortgage-pre-approval-explained.html:
+  258        <a class="related-card" href="/mortgage-broker-vs-bank-vs-lender.html"><span class="tag">Getting Ready</span>Bank vs. Broker vs. Retail Lender</a>
+  259:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  260        <a class="related-card" href="/mortgage-calculator.html"><span class="tag">Tool</span>Mortgage Affordability Calculator</a>
+
+renting-vs-buying.html:
+  252      <h2>The opportunity cost most comparisons get wrong</h2>
+  253:     <p>If you rent instead of buying, the down payment you would have spent doesn't just sit there. Invested in a diversified index fund at a historical ~7% average return, a $50,000-60,000 down payment can grow to roughly $60,000-130,000+ over 5-10 years — the same compounding math covered in our <a href="/simple-vs-compound-interest.html">simple vs. compound interest guide</a> and our <a href="/how-much-down-payment.html">down payment deep-dive</a>. This is real money that a pure "rent vs. mortgage payment" comparison completely ignores, and it's often the deciding factor over shorter time horizons.</p>
+  254    </div>
+
+  307        <a class="related-card" href="/hidden-costs-of-homeownership.html"><span class="tag">Ownership Costs</span>Hidden Costs of Homeownership</a>
+  308:       <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
+  309        <a class="related-card" href="/simple-vs-compound-interest.html"><span class="tag">Investing</span>Simple vs. Compound Interest</a>
+
+sitemap.xml:
+  94    <url>
+  95:     <loc>https://www.financescored.com/how-much-down-payment.html</loc>
+  96      <lastmod>2026-08-04</lastmod>
