@@ -55,16 +55,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.financescored.com/homeowners-vs-renters-insurance.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.financescored.com/term-vs-permanent-life-insurance.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.financescored.com/first-time-home-buyer-roadmap.html</loc>
     <lastmod>2026-07-10</lastmod>
     <priority>0.8</priority>
@@ -216,6 +206,21 @@
   </url>
 
   <!-- Insurance Cluster Articles -->
+  <url>
+    <loc>https://www.financescored.com/homeowners-vs-renters-insurance.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.financescored.com/term-vs-permanent-life-insurance.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.financescored.com/umbrella-insurance-explained.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.financescored.com/insurance-101.html</loc>
     <lastmod>2026-08-04</lastmod>
