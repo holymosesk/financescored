@@ -27,7 +27,7 @@
   "author": { "@type": "Person", "name": "Grant", "url": "https://www.financescored.com/about.html" },
   "publisher": { "@type": "Organization", "name": "FinanceScored" },
   "datePublished": "2026-07-07",
-  "dateModified": "2026-07-17",
+  "dateModified": "2026-08-09",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.financescored.com/home-buying.html" }
 }
 </script>
@@ -138,6 +138,14 @@ tr:last-child td { border-bottom: none; }
 .btn-primary { display: inline-block; padding: 12px 22px; background: #fff; color: #1A1A1A; border: none; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; text-decoration: none; }
 .btn-primary:hover { opacity: 0.9; }
 
+.article-list { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 1rem 0; }
+.article-card { display: block; border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; text-decoration: none; color: var(--text-primary); }
+.article-card:hover { border-color: var(--accent); }
+.article-card .status { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; background: #ECFDF5; color: #15803D; }
+.article-card .title { font-family: 'DM Serif Display', serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 6px; }
+.article-card .desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
+@media (min-width: 620px) { .article-list { grid-template-columns: 1fr 1fr; } }
+
 .flag-list { list-style: none; }
 .flag-list li { border-left: 3px solid var(--warning); padding: 2px 0 2px 14px; margin-bottom: 12px; font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
 .flag-list strong { color: var(--text-primary); }
@@ -195,6 +203,7 @@ footer a { color: var(--text-muted); text-decoration: underline; }
       <li><a href="#calculator">Get your exact number</a></li>
       <li><a href="#what-moves-it">What moves your number</a></li>
       <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#articles">Start here</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#next">Related guides</a></li>
     </ol>
@@ -241,7 +250,7 @@ footer a { color: var(--text-muted); text-decoration: underline; }
         </tbody>
       </table>
     </div>
-    <p class="table-note">Deep-dive breakdowns for each salary band are linked under "Related guides" below.</p>
+    <p class="table-note">Deep-dive breakdowns for each salary band are linked under "Start here" below.</p>
   </div>
 
   <div class="tool-callout" id="calculator">
@@ -297,6 +306,77 @@ footer a { color: var(--text-muted); text-decoration: underline; }
     </ul>
   </div>
 
+  <div class="seo-section" id="articles">
+    <h2>Start here</h2>
+    <div class="article-list">
+      <a class="article-card" href="/first-time-home-buyer-roadmap.html">
+        <span class="status">Live</span>
+        <div class="title">First-Time Home Buyer Roadmap</div>
+        <div class="desc">Every step in order, from building credit to closing day, with realistic timeframes.</div>
+      </a>
+      <a class="article-card" href="/afford-on-50k-salary.html">
+        <span class="status">Live</span>
+        <div class="title">$50,000 Salary: How Much House?</div>
+        <div class="desc">A full affordability breakdown across all three DTI tiers for a $50,000 income.</div>
+      </a>
+      <a class="article-card" href="/afford-on-75k-salary.html">
+        <span class="status">Live</span>
+        <div class="title">$75,000 Salary: How Much House?</div>
+        <div class="desc">A full affordability breakdown across all three DTI tiers for a $75,000 income.</div>
+      </a>
+      <a class="article-card" href="/afford-on-100k-salary.html">
+        <span class="status">Live</span>
+        <div class="title">$100,000 Salary: How Much House?</div>
+        <div class="desc">A full affordability breakdown across all three DTI tiers for a $100,000 income.</div>
+      </a>
+      <a class="article-card" href="/mortgage-pre-approval-explained.html">
+        <span class="status">Live</span>
+        <div class="title">Mortgage Pre-Approval Explained</div>
+        <div class="desc">Why pre-approval — not pre-qualification — is the number sellers actually trust, and what a lender verifies to get you there.</div>
+      </a>
+      <a class="article-card" href="/mortgage-application-checklist.html">
+        <span class="status">Live</span>
+        <div class="title">Mortgage Application Checklist: What You'll Need</div>
+        <div class="desc">Every document a lender will ask for, gathered before you apply instead of scrambled together after.</div>
+      </a>
+      <a class="article-card" href="/mortgage-broker-vs-bank-vs-lender.html">
+        <span class="status">Live</span>
+        <div class="title">Bank vs. Broker vs. Retail Lender</div>
+        <div class="desc">How banks, credit unions, retail lenders, and mortgage brokers actually differ — and how to shop all three.</div>
+      </a>
+      <a class="article-card" href="/fha-vs-conventional.html">
+        <span class="status">Live</span>
+        <div class="title">FHA vs. Conventional Loans</div>
+        <div class="desc">Down payment minimums, credit requirements, and MIP vs. PMI compared side by side.</div>
+      </a>
+      <a class="article-card" href="/how-much-down-payment.html">
+        <span class="status">Live</span>
+        <div class="title">How Much Down Payment Do You Need?</div>
+        <div class="desc">Why 20% down is a myth for most buyers, and what down payment size actually changes.</div>
+      </a>
+      <a class="article-card" href="/2-1-buydown-explained.html">
+        <span class="status">Live</span>
+        <div class="title">2-1 Buydown Explained</div>
+        <div class="desc">How a temporary rate buydown works, who typically pays for it, and when it's worth negotiating for.</div>
+      </a>
+      <a class="article-card" href="/15-year-vs-30-year-mortgage.html">
+        <span class="status">Live</span>
+        <div class="title">15-Year vs. 30-Year Mortgage</div>
+        <div class="desc">The real tradeoff between a lower total interest cost and a lower, more flexible monthly payment.</div>
+      </a>
+      <a class="article-card" href="/renting-vs-buying.html">
+        <span class="status">Live</span>
+        <div class="title">Renting vs. Buying: Break-Even Guide</div>
+        <div class="desc">The real break-even math between renting and buying, beyond just comparing a rent check to a mortgage payment.</div>
+      </a>
+      <a class="article-card" href="/hidden-costs-of-homeownership.html">
+        <span class="status">Live</span>
+        <div class="title">Hidden Costs of Homeownership</div>
+        <div class="desc">The costs that don't show up in a mortgage payment — maintenance, repairs, and the expenses first-time buyers underestimate.</div>
+      </a>
+    </div>
+  </div>
+
   <div class="faq-section" id="faq">
     <h2>Frequently asked questions</h2>
     <div class="faq-item"><p class="faq-q">What salary do I need to buy a $400,000 house?</p><p class="faq-a">It depends heavily on your other debt. At a conservative 28% front-end ratio, you'd want closer to $105,000-$110,000. Using the 38% front-end ratio typical in real-world conventional underwriting, it's closer to $78,000-$80,000. That gap is the entire point of this guide.</p></div>
@@ -309,20 +389,12 @@ footer a { color: var(--text-muted); text-decoration: underline; }
 
   <div class="card related-section" id="next">
     <h2>Related guides</h2>
-    <p>Some of these are live now, others are next up in the build queue.</p>
+    <p>From other silos that connect directly to home buying decisions.</p>
     <div class="related-grid">
-      <a class="related-card" href="/first-time-home-buyer-roadmap.html"><span class="tag">Start Here</span>First-Time Home Buyer Roadmap</a>
-      <a class="related-card" href="/afford-on-75k-salary.html"><span class="tag">Salary Breakdown</span>$75,000 Salary: How Much House?</a>
-      <a class="related-card" href="/afford-on-100k-salary.html"><span class="tag">Salary Breakdown</span>$100,000 Salary: How Much House?</a>
-      <a class="related-card" href="/afford-on-50k-salary.html"><span class="tag">Salary Breakdown</span>$50,000 Salary: How Much House?</a>
-      <a class="related-card" href="/mortgage-application-checklist.html"><span class="tag">Getting Ready</span>Mortgage Application Checklist: What You'll Need</a>
-      <a class="related-card" href="/mortgage-broker-vs-bank-vs-lender.html"><span class="tag">Getting Ready</span>Bank vs. Broker vs. Retail Lender</a>
-      <a class="related-card" href="/15-year-vs-30-year-mortgage.html"><span class="tag">Investing</span>15-Year vs 30-Year Mortgage</a>
-      <a class="related-card" href="/how-much-down-payment.html"><span class="tag">Down Payment</span>How Much Down Payment Do You Need?</a>
-      <a class="related-card" href="/renting-vs-buying.html"><span class="tag">Rent vs Buy</span>Renting vs Buying: Break-Even Guide</a>
-      <a class="related-card" href="/hidden-costs-of-homeownership.html"><span class="tag">Ownership Costs</span>Hidden Costs of Homeownership</a>
-      <a class="related-card" href="/2-1-buydown-explained.html"><span class="tag">Loan Terms</span>2-1 Buydown Explained</a>
       <a class="related-card" href="/what-is-a-credit-score.html"><span class="tag">Credit Scores</span>What Is a Credit Score?</a>
+      <a class="related-card" href="/debt-payoff.html"><span class="tag">Pillar Guide</span>Debt Payoff: The Real Plan</a>
+      <a class="related-card" href="/insurance.html"><span class="tag">Pillar Guide</span>Insurance: Protecting What You've Already Built</a>
+      <a class="related-card" href="/net-worth-vs-income.html"><span class="tag">Retirement</span>Net Worth vs. Income</a>
     </div>
   </div>
 
