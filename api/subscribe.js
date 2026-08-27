@@ -13,7 +13,8 @@ export default async function handler(req, res) {
     'mortgage': 'Mortgage Affordability',
     'compound-interest': 'Compound Interest',
     'debt-payoff': 'Debt Payoff',
-    'tracker': '10/10/80 Budget Tracker'
+        'tracker': '10/10/80 Budget Tracker',
+    'newsletter': 'FinanceScored'
   };
 
   const toolLabel = toolNames[tool] || 'Financial';
@@ -140,9 +141,18 @@ export default async function handler(req, res) {
     resultHtml = `
       <div style="padding: 16px; background: #F7F6F3; border-radius: 8px; margin-bottom: 16px; text-align: center;">
         <p style="font-size: 13px; color: #6B6B6B; margin: 0 0 16px;">Your interactive tracker is ready whenever you are — bookmark it, it saves your progress right in your browser.</p>
-        <a href="https://financescored.com/tools/10-10-80-tracker.html" style="display: inline-block; background: #2563EB; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">
+                <a href="https://financescored.com/tools/10-10-80-tracker.html" style="display: inline-block; background: #2563EB; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">
           Open Your Tracker →
         </a>
+      </div>`;
+  } else if (tool === 'newsletter') {
+    // Simple "you're subscribed" confirmation — no calculator result to report,
+    // just confirms the signup and sets expectation for what they'll get.
+    emailSubject = "You're Subscribed to FinanceScored";
+    resultHtml = `
+      <div style="padding: 16px; background: #F7F6F3; border-radius: 8px; margin-bottom: 16px; text-align: center;">
+        <p style="font-size: 14px; color: #1A1A1A; margin: 0 0 8px; font-weight: 600;">You're on the list.</p>
+        <p style="font-size: 13px; color: #6B6B6B; margin: 0;">We'll email you when new guides publish — no spam, unsubscribe anytime.</p>
       </div>`;
   }
 
