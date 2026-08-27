@@ -209,7 +209,15 @@ footer a { color: var(--text-muted); text-decoration: underline; }
         <div class="desc">A 3% fee to escape a 24% interest rate can be one of the best trades in personal finance — here's the real math and the deadline that makes or breaks it.</div>
       </a>
     </div>
-    <p style="font-size:13px; color:var(--text-muted); margin-top:0.5rem;">More Debt Payoff guides are in progress. Check back or subscribe below.</p>
+        <div style="margin-top:1rem; padding:1.1rem 1.25rem; background:var(--accent-light); border:0.5px solid rgba(37,99,235,0.2); border-radius:var(--radius-sm);">
+      <p style="font-size:13px; color:#1E40AF; font-weight:600; margin:0 0 8px;">More Debt Payoff guides are in progress.</p>
+      <p style="font-size:12.5px; color:#1E40AF; margin:0 0 10px; line-height:1.5;">Get an email when new ones publish — no spam, unsubscribe anytime.</p>
+      <form id="debtPayoffSubscribeForm" style="display:flex; gap:8px; flex-wrap:wrap;" onsubmit="return subscribeToUpdates(event)">
+        <input type="email" id="debtPayoffSubscribeEmail" required placeholder="you@email.com" style="flex:1; min-width:180px; padding:10px 12px; border:0.5px solid rgba(37,99,235,0.25); border-radius:var(--radius-sm); font-family:'Inter',sans-serif; font-size:13px;">
+        <button type="submit" style="padding:10px 18px; background:#1A1A1A; color:#fff; border:none; border-radius:var(--radius-sm); font-size:13px; font-weight:600; cursor:pointer;">Notify me</button>
+      </form>
+      <p id="debtPayoffSubscribeMsg" style="font-size:12px; margin:8px 0 0; display:none;"></p>
+    </div>
   </div>
 
   <div class="tool-callout" id="calculator">
@@ -254,6 +262,31 @@ footer a { color: var(--text-muted); text-decoration: underline; }
 <footer>
   FinanceScored.com · Free Financial Tools · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/disclaimer.html">Disclaimer</a>
 </footer>
-
+<script>
+async function subscribeToUpdates(e) {
+  e.preventDefault();
+  const emailInput = document.getElementById('debtPayoffSubscribeEmail');
+  const msgEl = document.getElementById('debtPayoffSubscribeMsg');
+  const email = emailInput.value.trim();
+  msgEl.style.display = 'none';
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, tool: 'newsletter' })
+    });
+    if (!res.ok) throw new Error('failed');
+    msgEl.textContent = "You're subscribed — check your inbox for confirmation.";
+    msgEl.style.color = '#15803D';
+    msgEl.style.display = 'block';
+    emailInput.value = '';
+  } catch (err) {
+    msgEl.textContent = 'Something went wrong. Please try again.';
+    msgEl.style.color = '#DC2626';
+    msgEl.style.display = 'block';
+  }
+  return false;
+}
+</script>
 </body>
 </html>
